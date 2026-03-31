@@ -62,6 +62,11 @@ export const SERVICES: ServiceCard[] = [
   },
 ];
 
+export const ABOUT_IMG = {
+  src: "/images/about/about1200p.webp",
+  alt: "Imagem do Felipe Brunelli",
+};
+
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,

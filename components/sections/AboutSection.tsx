@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from "next/image";
+import { ABOUT_IMG } from "@/constants";
 
 export function AboutSection() {
   return (
@@ -11,16 +12,17 @@ export function AboutSection() {
           </div>
           <div className="relative z-10 w-full aspect-square border-l-8 border-secondary overflow-hidden">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf0kivW17LC28m6RkSqxxQlsS_VN9PYSU4qHqrHUbVzAVORjDOeg4IGOy34OGuE2hl08jC9UEbURkTHtLexjb12V1KpIt7vrFUfGudtIuR5Qyfl7Arrh9LzTz1gzKzhuSVY4mbLwr1WP3Lns9wQgfWVk77nRMQm50Z5O6TrjlssuHOoQlPWc-5SVl3GkV7REfApETZ-ctgJZqs--GxCuLlY5Fom8K-nHyyI0uNCDpUyTLicN7xrojO1s_e8kgvi8tH6Llv-gf2vPU"
-              alt="Tatuador Brunelli concentrado no trabalho, usando máscara preta e luvas, com máquina de tatuar profissional"
+              src={ABOUT_IMG.src}
+              alt={ABOUT_IMG.alt}
               fill
-              className="object-cover grayscale"
+              quality={90}
+              className="object-cover object-[center_20%] md:object-contain"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
 
-          <div className="absolute -bottom-6 -right-6 bg-secondary p-8 z-20">
-            <span className="block font-headline text-5xl font-black text-on-secondary leading-none">
+          <div className="absolute -bottom-12 -right-4 md:-bottom-6 md:-right-6 bg-secondary p-8 z-20">
+            <span className="block font-headline text-2xl md:text-5xl font-black text-on-secondary leading-none">
               10+
             </span>
             <span className="block font-headline text-sm font-bold uppercase tracking-widest text-on-secondary mt-1">
@@ -35,19 +37,19 @@ export function AboutSection() {
             O Artista
           </span>
           <h2 className="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter mt-4 mb-8">
-            Modern Shokunin
+            Shokunin
           </h2>
 
           <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
             <p>
-              Brunelli não é apenas um tatuador; ele encarna o conceito do{' '}
+              Brunelli encarna o conceito do{" "}
               <strong className="text-on-surface">Shokunin</strong> - O artesão
               que dedica sua vida ao aperfeiçoamento constante de sua técnica.
             </p>
             <p>
               Com mais de uma década de imersão na cultura e estética japonesa,
               seu trabalho no The Garden Estudio em Jundiaí é referência em
-              precisão técnica e fluidez anatômica.
+              precisão técnica e fluidez.
             </p>
             <p>
               Cada projeto é iniciado do zero, respeitando as curvas do corpo do
@@ -57,10 +59,11 @@ export function AboutSection() {
 
           <blockquote className="mt-10 p-6 bg-surface-container-high border-l-4 border-secondary italic text-on-surface-variant">
             &ldquo;A tatuagem japonesa é uma jornada de permanência. Meu dever é
-            garantir que cada traço conte uma história de força e tradição.&rdquo;
+            garantir que cada traço conte uma história de força e
+            tradição.&rdquo;
           </blockquote>
         </div>
       </div>
     </section>
-  )
+  );
 }

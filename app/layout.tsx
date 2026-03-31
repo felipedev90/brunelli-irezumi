@@ -42,7 +42,7 @@ const jsonLd = {
   "@type": "TattooParlor",
   name: "Brunelli Irezumi",
   url: "https://brunelliirezumi.com",
-  telephone: "+5511999999999",
+  telephone: "+5511976624286",
   address: {
     "@type": "PostalAddress",
     streetAddress: "R. Baronesa do Japi, 199 - Centro",

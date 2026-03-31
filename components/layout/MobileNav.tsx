@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MAPS_URL, WHATSAPP_URL } from "@/constants";
+import { MapPinned, Phone, MessageCircleCheck } from "lucide-react";
 
 export function MobileNav() {
   return (
@@ -8,20 +9,20 @@ export function MobileNav() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col items-center justify-center text-on-surface transition-all"
+        className="flex flex-col items-center justify-center text-on-surface transition-all hover:text-secondary  duration-300"
       >
-        <span className="material-symbols-outlined">chat</span>
-        <span className="font-body text-[10px] uppercase tracking-widest mt-1">
+        <MessageCircleCheck size={24} />
+        <span className="font-body text-[10px] uppercase tracking-widest mt-1 pt-2">
           WhatsApp
         </span>
       </Link>
 
       <Link
-        href="tel:+5511999999999"
-        className="flex flex-col items-center justify-center text-on-surface transition-all"
+        href="tel:11976624286"
+        className="flex flex-col items-center justify-center text-on-surface transition-all hover:text-secondary  duration-300"
       >
-        <span className="material-symbols-outlined">call</span>
-        <span className="font-body text-[10px] uppercase tracking-widest mt-1">
+        <Phone size={24} />
+        <span className="font-body text-[10px] uppercase tracking-widest mt-1 pt-2">
           Ligar
         </span>
       </Link>
@@ -30,10 +31,10 @@ export function MobileNav() {
         href={MAPS_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col items-center justify-center text-on-surface transition-all"
+        className="flex flex-col items-center justify-center text-on-surface transition-all hover:text-secondary  duration-300"
       >
-        <span className="material-symbols-outlined">location_on</span>
-        <span className="font-body text-[10px] uppercase tracking-widest mt-1">
+        <MapPinned size={24} />
+        <span className="font-body text-[10px] uppercase tracking-widest mt-1 pt-2">
           Localização
         </span>
       </Link>

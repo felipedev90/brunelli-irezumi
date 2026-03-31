@@ -1,0 +1,59 @@
+import Image from "next/image";
+import Link from "next/link";
+import { SERVICES } from "@/constants";
+
+export function ServicesSection() {
+  return (
+    <section className="py-24 bg-surface-container-low" id="servicos">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+          <div>
+            <span className="text-secondary font-headline uppercase tracking-[0.3em] text-sm font-bold">
+              Especialidades
+            </span>
+            <h2 className="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter mt-2">
+              Artesanato na Pele
+            </h2>
+          </div>
+          <div className="h-[2px] flex-1 bg-outline-variant/20 mx-8 hidden md:block" />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-px bg-outline-variant/10">
+          {SERVICES.map((service) => (
+            <div
+              key={service.id}
+              className="group relative aspect-4/5 overflow-hidden bg-surface"
+            >
+              <Image
+                src={service.image.src}
+                alt={service.image.alt}
+                fill
+                className="object-cover opacity-50 transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-[#131313] via-transparent to-transparent" />
+
+              <div className="absolute bottom-0 p-10">
+                <h3 className="font-headline text-3xl font-bold uppercase mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-on-surface-variant mb-6 max-w-sm">
+                  {service.description}
+                </p>
+                <Link
+                  href="#"
+                  className="text-secondary font-headline font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform"
+                >
+                  {service.cta}
+                  <span className="material-symbols-outlined">
+                    trending_flat
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

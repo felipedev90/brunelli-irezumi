@@ -8,7 +8,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-24 right-6 z-60 bg-[#25D366] text-white p-4 rounded-full shadow-2xl animate-bounce hover:scale-110 active:scale-90 transition-all"
+      className="fixed bottom-4 right-4 z-60 bg-[#25D366] text-white p-4 rounded-full shadow-2xl animate-bounce hover:scale-110 active:scale-90 transition-all"
     >
       <svg
         className="w-8 h-8"

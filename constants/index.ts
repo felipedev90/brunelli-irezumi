@@ -34,26 +34,29 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Cuidados", href: "#faq" },
 ];
 
+export const HERO_IMG_CONTENT = {
+  src: "/images/hero/hero1900p.webp",
+  alt: "Felipe Brunelli aplicando uma tatuagem tradicional japonesa.",
+};
+
 export const SERVICES: ServiceCard[] = [
   {
     id: 1,
-    title: "Tatuagem Japonesa Tradicional",
-    description:
-      "Irezumi autêntico. Dragões, carpas, samurais e divindades executados com respeito à iconografia clássica.",
+    title: "Tatuagem Tradicional",
+    description: "Tradicional Irezumi tattoo.",
     cta: "Saiba mais",
     image: {
-      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAhxC5Fy71ofgKK-alJh3pykD4tdn-iOZkrNS1rj8PphYLvuEX6zIXmV8yku8SmltAqu1YweDnLyHFWbj018uXEri_s8NXylYdhPreSBquSjEUc6KHjtzIQLq_HoXuXvuP5ze2gZ0q8ZEtnY003GP8vWfDGgqQViQNQUCVQE-DyEp4rNq15_Bt8UVL5ibxlWkzOFSqSfjCqKDTKeVHvMo_PnJTMAW25Jlc0qL5e4gpztYUmXZg2VFffQgwC9aouPo5A-wZQYvs8JnU",
+      src: "/images/services/tradicional1000p.webp",
       alt: "Agulha de tatuagem aplicando tinta tradicional japonesa com dragão ao fundo",
     },
   },
   {
     id: 2,
-    title: "Coberturas de Alta Performance",
-    description:
-      "Resgate sua autoestima. Especialista em transformar tatuagens antigas em novas obras primas de alto contraste.",
+    title: "Coberturas",
+    description: "Resgate sua autoestima.",
     cta: "Ver transformações",
     image: {
-      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2wm3nLPQEwlHqGqmpG2bN8JXDIKvaoJxkemLcKIXm72kMBP9fs55nDUZAA7vsxytRpBPTi8_o13z4f7Gtqdg-Fv977JivSxp00ceBNlwX9g1mcydu1K7b1qbcoQXS11gZHAvetodRtGpu46yRSaDjuRNVP2ya3aL8BjKsYE8PoCDF3iIxsF0MkJa4ntMgii3GZllm-xSrK4M4sFNiXtVIPEO07YkC3Fx3RocKelFQLNTC-yQmmRoZBsFKUHGaohdtQCHED5Vs6tg",
+      src: "/images/services/cover1000p.webp",
       alt: "Antes e depois de uma cobertura de tatuagem mostrando a transformação",
     },
   },

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SERVICES } from "@/constants";
+import { MoveRight } from "lucide-react";
 
 export function ServicesSection() {
   return (
@@ -15,29 +16,30 @@ export function ServicesSection() {
               Artesanato na Pele
             </h2>
           </div>
-          <div className="h-[2px] flex-1 bg-outline-variant/20 mx-8 hidden md:block" />
+          <div className="h-0.5 flex-1 bg-outline-variant/20 mx-8 hidden md:block" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-px bg-outline-variant/10">
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group relative aspect-4/5 overflow-hidden bg-surface"
+              className="group relative aspect-3/2 overflow-hidden bg-surface"
             >
               <Image
                 src={service.image.src}
                 alt={service.image.alt}
                 fill
-                className="object-cover opacity-50 transition-transform duration-700 group-hover:scale-110"
+                quality={90}
+                className="object-cover opacity-40 md:opacity-50 transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-linear-to-t from-[#131313] via-transparent to-transparent" />
 
-              <div className="absolute bottom-0 p-10">
-                <h3 className="font-headline text-3xl font-bold uppercase mb-4">
+              <div className="absolute bottom-0 p-4 md:p-10">
+                <h3 className="font-headline text-2xl md:text-3xl font-bold uppercase mb-4">
                   {service.title}
                 </h3>
-                <p className="text-on-surface-variant mb-6 max-w-sm">
+                <p className="text-on-surface md:text-on-surface-variant mb-6 max-w-sm">
                   {service.description}
                 </p>
                 <Link
@@ -46,7 +48,7 @@ export function ServicesSection() {
                 >
                   {service.cta}
                   <span className="material-symbols-outlined">
-                    trending_flat
+                    <MoveRight size={20} />
                   </span>
                 </Link>
               </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WHATSAPP_URL } from "@/constants";
+import { WHATSAPP_URL, HERO_IMG_CONTENT } from "@/constants";
 import { MoveRight } from "lucide-react";
 
 export function HeroSection() {
@@ -10,8 +10,8 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-linear-to-l from-transparent via-[#131313]/60 to-[#131313] z-10" />
         <Image
-          src="/images/hero/hero1900p.webp"
-          alt="Tatuagem tradicional japonesa irezumi com escamas de dragão e flores de cerejeira"
+          src={HERO_IMG_CONTENT.src}
+          alt={HERO_IMG_CONTENT.alt}
           fill
           priority
           className="object-cover object-[40%_90%] md:object-[50%_90%] grayscale opacity-60"

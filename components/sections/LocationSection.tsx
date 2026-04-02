@@ -4,7 +4,7 @@ import { Clock, MapPinned } from "lucide-react";
 
 export function LocationSection() {
   return (
-    <section className="py-24 bg-surface">
+    <section className="py-12 md:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-px bg-outline-variant/10">
           {/* Info */}

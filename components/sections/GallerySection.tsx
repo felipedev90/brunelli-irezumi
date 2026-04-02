@@ -21,7 +21,7 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 
 export function GallerySection() {
   return (
-    <section className="py-24 bg-surface" id="galeria">
+    <section className="py-12 md:py-24 bg-surface" id="galeria">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter">

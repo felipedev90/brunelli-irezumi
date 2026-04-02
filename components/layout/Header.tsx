@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from "@/constants";
 import { MobileNav } from "./MobileNav";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
@@ -27,7 +28,10 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav aria-label="Navegação principal" className="hidden md:flex gap-8 items-center">
+        <nav
+          aria-label="Navegação principal"
+          className="hidden md:flex gap-8 items-center"
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -59,6 +63,10 @@ export function Header() {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </header>
+
+      <div className={`md:block ${isOpen ? "hidden" : "block"}`}>
+        <WhatsAppButton />
+      </div>
 
       {/* Mobile Menu Overlay */}
       <div

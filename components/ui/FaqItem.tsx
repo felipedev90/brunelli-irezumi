@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { FaqItem as FaqItemType } from "@/types";
+import { ChevronDown } from "lucide-react";
 
 interface FaqItemProps {
   item: FaqItemType;
@@ -12,12 +13,10 @@ export function FaqItem({ item }: FaqItemProps) {
         <span className="font-headline font-bold uppercase tracking-wide">
           {item.question}
         </span>
-        <span
-          className="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0 ml-4"
+        <ChevronDown
+          className="group-open:rotate-180 transition-transform shrink-0 ml-4"
           aria-hidden="true"
-        >
-          expand_more
-        </span>
+        />
       </summary>
 
       <div className="px-6 pb-6 text-on-surface-variant leading-relaxed">

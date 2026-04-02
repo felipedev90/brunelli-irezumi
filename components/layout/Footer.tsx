@@ -86,6 +86,7 @@ export function Footer() {
             href="https://felipe-silva90-portfolio.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-secondary-container transition-colors"
           >
             Felipe Augusto
           </a>

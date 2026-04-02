@@ -16,7 +16,7 @@ export function AboutSection() {
               alt={ABOUT_IMG.alt}
               fill
               quality={90}
-              className="object-cover object-[center_20%] md:object-contain"
+              className="object-cover object-[center_20%] lg:object-contain"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>

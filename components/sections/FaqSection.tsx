@@ -1,6 +1,7 @@
 import { FAQ_ITEMS } from "@/constants";
 import { FaqItem } from "@/components/ui/FaqItem";
 
+
 export function FaqSection() {
   return (
     <section className="py-24 bg-surface-container-low" id="faq">

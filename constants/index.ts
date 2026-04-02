@@ -29,9 +29,9 @@ export const STUDIO_RATING = {
 };
 
 export const NAV_LINKS: NavLink[] = [
+  { label: "O Artista", href: "#sobre" },
   { label: "Galeria", href: "#galeria" },
-  { label: "O Estúdio", href: "#sobre" },
-  { label: "Cuidados", href: "#faq" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export const HERO_IMG_CONTENT = {
@@ -120,7 +120,7 @@ export const FAQ_ITEMS: FaqItem[] = [
       "Utilizamos apenas materiais descartáveis de primeira linha, tintas importadas certificadas e seguimos rigorosamente todos os protocolos da ANVISA.",
     cta: {
       label: "Agendar agora via WhatsApp",
-      href: "https://wa.me/5511999999999",
+      href: WHATSAPP_URL,
     },
   },
 ];

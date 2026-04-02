@@ -4,7 +4,6 @@ import {
   MAPS_URL,
   NAV_LINKS,
   STUDIO_NAME,
-  STUDIO_TAGLINE,
   WHATSAPP_URL,
 } from "@/constants";
 
@@ -20,7 +19,7 @@ export function Footer() {
       {/* Container Principal: Usa Grid para distribuir o espaço */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         {/* Lado Esquerdo: Logo e Descrição (Ocupa 5 colunas no desktop) */}
-        <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="md:col-span-5 flex flex-col justify-center items-center md:items-start text-center md:text-left m-auto">
           <p className="font-headline text-2xl font-bold text-on-surface mb-2">
             {STUDIO_NAME}
           </p>

@@ -18,9 +18,9 @@ export function GallerySection() {
             <div
               key={image.id}
               className={`
-                overflow-hidden bg-surface hover:brightness-110 transition-all cursor-zoom-in
+                overflow-hidden bg-surface hover:brightness-110 transition-all
                 ${image.span === "row" ? "md:row-span-2 aspect-3/4" : "aspect-3/4"}
-                ${image.id === 2 ? "aspect-square md:aspect-[3/4]" : ""}
+                ${image.id === 2 ? "aspect-square md:aspect-3/4" : ""}
                 ${image.id === 4 || image.id === 5 ? "aspect-square" : ""}
               `}
             >
@@ -45,7 +45,7 @@ export function GallerySection() {
             className="inline-flex items-center gap-3 text-on-surface font-headline font-bold uppercase tracking-widest hover:text-secondary transition-colors"
           >
             Ver mais no Instagram
-            <span className="material-symbols-outlined">open_in_new</span>
+            <span className="material-symbols-outlined" aria-hidden="true">open_in_new</span>
           </Link>
         </div>
       </div>

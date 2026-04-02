@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from "@/constants";
 import { MobileNav } from "./MobileNav";
@@ -8,6 +8,13 @@ import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      firstLinkRef.current?.focus();
+    }
+  }, [isOpen]);
 
   return (
     <>
@@ -20,7 +27,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav aria-label="Navegação principal" className="hidden md:flex gap-8 items-center">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -40,30 +47,41 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* Mobile menu icon - AGORA COM CLICK */}
+        {/* Mobile menu button */}
         <button
           className="md:hidden text-secondary"
-          aria-label="Abrir menu"
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
           type="button"
-          onClick={() => setIsOpen(!isOpen)} // Alterna entre true/false
+          onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </header>
 
-      {/* Menu Mobile Lateral (Overlay) */}
+      {/* Mobile Menu Overlay */}
       <div
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu de navegação"
+        aria-hidden={!isOpen}
         className={`fixed inset-0 z-40 bg-background transition-transform duration-300 md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <MobileNav />
 
-        <nav className="flex flex-col items-center justify-center h-full gap-8">
-          {NAV_LINKS.map((link) => (
+        <nav
+          aria-label="Navegação mobile"
+          className="flex flex-col items-center justify-center h-full gap-8"
+        >
+          {NAV_LINKS.map((link, index) => (
             <Link
               key={link.href}
               href={link.href}
+              ref={index === 0 ? firstLinkRef : undefined}
               onClick={() => setIsOpen(false)}
               className="text-2xl font-headline uppercase font-bold text-on-surface hover:text-on-secondary transition-colors duration-300"
             >

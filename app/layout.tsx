@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Epilogue, Manrope } from "next/font/google";
 import "../app/styles/globals.css";
+import { FAQ_ITEMS } from "@/constants";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -17,7 +18,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "BRUNELLI IREZUMI | TATUAGEM em JUNDIAÍ-SP ⭐️ 4.9",
+  metadataBase: new URL("https://brunelliirezumi.com"),
+  title: "BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP | 4.9★",
   description:
     "Especialista em Tatuagem Japonesa Tradicional (Irezumi) e Coberturas de Alta Performance em Jundiaí. Mais de 10 anos de experiência como Modern Shokunin. Agende sua arte única.",
   keywords: [
@@ -28,16 +30,39 @@ export const metadata: Metadata = {
     "tatuador Jundiaí",
     "Brunelli Irezumi",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí",
     description:
       "Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.",
     type: "website",
     locale: "pt_BR",
+    url: "https://brunelliirezumi.com",
+    images: [
+      {
+        url: "/images/hero/hero1900p.webp",
+        width: 1900,
+        height: 1267,
+        alt: "Brunelli Irezumi — Tatuagem Japonesa Tradicional em Jundiaí-SP",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí",
+    description:
+      "Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.",
+    images: ["/images/hero/hero1900p.webp"],
   },
 };
 
-const jsonLd = {
+const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "TattooParlor",
   name: "Brunelli Irezumi",
@@ -76,6 +101,19 @@ const jsonLd = {
   },
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -86,7 +124,13 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body className={`${epilogue.variable} ${manrope.variable} font-body`}>

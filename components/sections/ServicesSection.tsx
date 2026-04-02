@@ -1,25 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SERVICES } from "@/constants";
+import { SERVICES, WHATSAPP_URL } from "@/constants";
 import { MoveRight } from "lucide-react";
 
 export function ServicesSection() {
   return (
-    <section className="py-24 bg-surface-container-low" id="servicos">
+    <section className="py-12 md:py-24 bg-surface-container-low" id="servicos">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-4">
           <div>
             <span className="text-secondary font-headline uppercase tracking-[0.3em] text-sm font-bold">
               Especialidades
             </span>
             <h2 className="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter mt-2">
-              Artesanato na Pele
+              Arte na Pele
             </h2>
           </div>
           <div className="h-0.5 flex-1 bg-outline-variant/20 mx-8 hidden md:block" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-outline-variant/10">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-px md:bg-outline-variant/10">
           {SERVICES.map((service) => (
             <div
               key={service.id}
@@ -43,13 +43,13 @@ export function ServicesSection() {
                   {service.description}
                 </p>
                 <Link
-                  href="#"
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-secondary font-headline font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform"
                 >
                   {service.cta}
-                  <span className="material-symbols-outlined">
-                    <MoveRight size={20} />
-                  </span>
+                  <MoveRight size={20} aria-hidden="true" />
                 </Link>
               </div>
             </div>

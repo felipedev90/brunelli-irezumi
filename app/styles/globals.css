@@ -94,26 +94,6 @@
     user-select: none;
   }
 
-  @layer base {
-    :root {
-      /* Primary - Black */
-      --primary: 0 0% 0%;
-
-      /* Secondary - Red (#E63946) */
-      --secondary: 355 78% 56%;
-
-      /* Tertiary - Gold (#D4AF37) */
-      --tertiary: 46 65% 52%;
-
-      /* Neutral - Dark Gray (#1A1A1A) */
-      --neutral: 0 0% 10%;
-
-      /* Exemplos de escalas (você pode extrair da sua imagem) */
-      --secondary-light: 355 78% 80%;
-      --secondary-dark: 355 78% 30%;
-    }
-  }
-
   .fill-icon {
     font-variation-settings:
       "FILL" 1,

@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { MAPS_URL, STUDIO_ADDRESS, STUDIO_HOURS } from '@/constants'
+import Link from "next/link";
+import { MAPS_URL, STUDIO_ADDRESS, STUDIO_HOURS } from "@/constants";
+import { Clock, MapPinned } from "lucide-react";
 
 export function LocationSection() {
   return (
@@ -8,16 +8,17 @@ export function LocationSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-px bg-outline-variant/10">
           {/* Info */}
-          <div className="bg-surface-container-low p-12">
+          <div className="bg-surface-container-low  p-12">
             <h2 className="font-headline text-4xl font-black uppercase tracking-tighter mb-8">
               Onde Estamos
             </h2>
 
             <div className="space-y-8">
               <div className="flex gap-4">
-                <span className="material-symbols-outlined text-secondary shrink-0">
-                  location_on
-                </span>
+                <MapPinned
+                  className="text-secondary shrink-0"
+                  aria-hidden="true"
+                />
                 <div>
                   <p className="font-bold text-on-surface">
                     {STUDIO_ADDRESS.complement}
@@ -25,16 +26,14 @@ export function LocationSection() {
                   <p className="text-on-surface-variant">
                     {STUDIO_ADDRESS.street}
                     <br />
-                    {STUDIO_ADDRESS.city} - {STUDIO_ADDRESS.state},{' '}
+                    {STUDIO_ADDRESS.city} - {STUDIO_ADDRESS.state},{" "}
                     {STUDIO_ADDRESS.cep}
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <span className="material-symbols-outlined text-secondary shrink-0">
-                  schedule
-                </span>
+                <Clock className="text-secondary shrink-0" aria-hidden="true" />
                 <div>
                   <p className="font-bold text-on-surface">
                     Horário de Atendimento
@@ -55,18 +54,19 @@ export function LocationSection() {
           </div>
 
           {/* Map */}
-          <div className="min-h-[400px] grayscale contrast-125 brightness-75 bg-surface-variant relative overflow-hidden">
-            <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPap-Nvwt2JEzKIfPa80aTuG6c0pLcQnGGFuvd1V8qt0lNa-oyUc-Xs_yNjHtdH2_wsGh7bzecvB0LXXmLlYmUTHG0sg9UcZgrSsZMTPjJMEl0LC_CLcCs-Kvzafg8B-4usoSwvFHSYn6c1FS9mtdmdhsodDCZ-OCxF2cQXlnrvVjCvXgdarjwwMojwKxeB0rejIPFvmMLS6XdL2_ibzaZGuinMhwPkOdMCaETqqBb3HWtIp2_Zmel22Icb1FrFdCzaGBW6CJM7U"
-              alt="Mapa de Jundiaí"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-secondary/10 pointer-events-none" />
+          <div className="min-h-100 contrast-125 brightness-75 bg-surface-variant relative overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d916.8592970852643!2d-46.8869884!3d-23.1907328!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf26938a08c8c9%3A0xb4d85dec7fadb797!2sThe%20Garden%20Custom!5e0!3m2!1spt-BR!2sbr!4v1775154788917!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0, position: "absolute", inset: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

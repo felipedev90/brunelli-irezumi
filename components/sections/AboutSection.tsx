@@ -21,7 +21,7 @@ export function AboutSection() {
             />
           </div>
 
-          <div className="absolute -bottom-12 -right-4 md:-bottom-6 md:-right-6 bg-secondary p-8 z-20">
+          <div className="absolute -bottom-20 -right-2 md:-bottom-6 md:-right-6 bg-secondary p-8 z-20">
             <span className="block font-headline text-2xl md:text-5xl font-black text-on-secondary leading-none">
               10+
             </span>

@@ -42,16 +42,56 @@ export const HERO_IMG_CONTENT = {
 export const SERVICES: ServiceCard[] = [
   {
     id: 1,
-    title: "Tatuagem Tradicional",
-    description: "Tradicional Irezumi tattoo.",
+    slug: "tradicional",
+    title: "Desenhos",
+    description: "Arte original. Feita à mão. ",
     cta: "Saiba mais",
     image: {
       src: "/images/services/tradicional1000p.webp",
-      alt: "Agulha de tatuagem aplicando tinta tradicional japonesa com dragão ao fundo",
+      alt: "Quadros de tatuagens tradicionais japonesas mostrando a arte do Irezumi",
     },
+    gallery: [
+      {
+        src: "/images/servicesDrawings/servicesdrawings01.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings02.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings03.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings04.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings05.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings06.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings07.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings09.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesDrawings/servicesdrawings08.webp",
+        alt: "Desenho tradicional feito à mão por Felipe Brunelli",
+      },
+    ],
   },
   {
     id: 2,
+    slug: "coverup",
     title: "Coberturas",
     description: "Resgate sua autoestima.",
     cta: "Ver transformações",
@@ -59,6 +99,16 @@ export const SERVICES: ServiceCard[] = [
       src: "/images/services/cover1000p.webp",
       alt: "Antes e depois de uma cobertura de tatuagem mostrando a transformação",
     },
+    gallery: [
+      {
+        src: "/images/servicesCoverups/servicescoverup01.webp",
+        alt: "Cobertura de tatuagem feita à mão por Felipe Brunelli",
+      },
+      {
+        src: "/images/servicesCoverups/servicescoverup02.webp",
+        alt: "Cobertura de tatuagem feita à mão por Felipe Brunelli",
+      },
+    ],
   },
 ];
 

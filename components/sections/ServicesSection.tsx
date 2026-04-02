@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SERVICES, WHATSAPP_URL } from "@/constants";
+import { SERVICES } from "@/constants";
 import { MoveRight } from "lucide-react";
 
 export function ServicesSection() {
@@ -13,7 +13,7 @@ export function ServicesSection() {
               Especialidades
             </span>
             <h2 className="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter mt-2">
-              Arte na Pele
+              Arte Irezumi
             </h2>
           </div>
           <div className="h-0.5 flex-1 bg-outline-variant/20 mx-8 hidden md:block" />
@@ -43,9 +43,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
                 <Link
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/servicos/${service.slug}`}
                   className="text-secondary font-headline font-bold uppercase tracking-widest text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform"
                 >
                   {service.cta}

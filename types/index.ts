@@ -24,6 +24,7 @@ export interface GalleryImage {
 
 export interface ServiceCard {
   id: number;
+  slug: string;
   title: string;
   description: string;
   cta: string;
@@ -31,6 +32,10 @@ export interface ServiceCard {
     src: string;
     alt: string;
   };
+  gallery: {
+    src: string;
+    alt: string;
+  }[];
 }
 
 export interface NavLink {

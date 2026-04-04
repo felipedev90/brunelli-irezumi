@@ -24,8 +24,7 @@ export function Footer() {
             {STUDIO_NAME}
           </p>
           <p className="font-body text-sm leading-relaxed text-on-surface/60 max-w-xs">
-            The Shokunin - Eterno estudante da{" "}
-            <strong>tatuagem japonesa</strong>
+            Eterno estudante da <strong>tatuagem japonesa</strong>
           </p>
         </div>
 

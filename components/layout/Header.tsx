@@ -21,7 +21,7 @@ export function Header() {
     <>
       <header className="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
         <Link
-          href="/"
+          href="#hero"
           className="text-xl font-black tracking-widest text-on-surface font-headline uppercase"
         >
           {STUDIO_NAME}

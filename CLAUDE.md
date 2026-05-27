@@ -47,7 +47,7 @@ public/
 ```tsx
 // ✅ Correto
 interface CardProps {
-  title: string;
+  title: string
 }
 export function Card({ title }: CardProps) {}
 
@@ -62,10 +62,10 @@ export default function Card() {}
 
 ```tsx
 // ✅ Correto
-import { WHATSAPP_URL } from "@/constants";
+import { WHATSAPP_URL } from '@/data/projects'
 
 // ❌ Errado
-href = "https://wa.me/5511999999999";
+href = 'https://wa.me/5511999999999'
 ```
 
 ### Imagens
@@ -140,8 +140,8 @@ Projeto usa **Material Symbols Outlined** via CSS (`globals.css`).
 Lucide React também está instalado para ícones pontuais:
 
 ```tsx
-import { MoveRight } from "lucide-react";
-<MoveRight size={24} />;
+import { MoveRight } from 'lucide-react'
+;<MoveRight size={24} />
 ```
 
 ---

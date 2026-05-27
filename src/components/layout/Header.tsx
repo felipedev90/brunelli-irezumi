@@ -1,28 +1,28 @@
-"use client";
+'use client'
 
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from "@/constants";
-import { MobileNav } from "./MobileNav";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
+import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from '@/data/projects'
+import { MobileNav } from './MobileNav'
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { Menu, X } from 'lucide-react'
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const firstLinkRef = useRef<HTMLAnchorElement>(null)
 
   useEffect(() => {
     if (isOpen) {
-      firstLinkRef.current?.focus();
+      firstLinkRef.current?.focus()
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+      <header className="fixed top-0 z-50 flex w-full items-center justify-between bg-[#131313]/80 px-6 py-4 backdrop-blur-xl">
         <Link
           href="#hero"
-          className="text-xl font-black tracking-widest text-on-surface font-headline uppercase"
+          className="text-on-surface font-headline text-xl font-black tracking-widest uppercase"
         >
           {STUDIO_NAME}
         </Link>
@@ -30,13 +30,13 @@ export function Header() {
         {/* Desktop Nav */}
         <nav
           aria-label="Navegação principal"
-          className="hidden md:flex gap-8 items-center"
+          className="hidden items-center gap-8 md:flex"
         >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-headline tracking-tighter uppercase font-bold text-on-surface hover:text-secondary transition-colors duration-300"
+              className="font-headline text-on-surface hover:text-secondary font-bold tracking-tighter uppercase transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -45,7 +45,7 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-secondary-container text-on-surface px-6 py-2 font-headline uppercase font-bold text-sm hover:scale-105 active:scale-95 transition-all"
+            className="bg-secondary-container text-on-surface font-headline px-6 py-2 text-sm font-bold uppercase transition-all hover:scale-105 active:scale-95"
           >
             Agendamento
           </Link>
@@ -53,8 +53,8 @@ export function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-secondary"
-          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          className="text-secondary md:hidden"
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           type="button"
@@ -64,7 +64,7 @@ export function Header() {
         </button>
       </header>
 
-      <div className={`md:block ${isOpen ? "hidden" : "block"}`}>
+      <div className={`md:block ${isOpen ? 'hidden' : 'block'}`}>
         <WhatsAppButton />
       </div>
 
@@ -75,15 +75,15 @@ export function Header() {
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!isOpen}
-        className={`fixed inset-0 z-40 bg-background transition-transform duration-300 md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`bg-background fixed inset-0 z-40 transition-transform duration-300 md:hidden ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <MobileNav />
 
         <nav
           aria-label="Navegação mobile"
-          className="flex flex-col items-center justify-center h-full gap-8"
+          className="flex h-full flex-col items-center justify-center gap-8"
         >
           {NAV_LINKS.map((link, index) => (
             <Link
@@ -91,7 +91,7 @@ export function Header() {
               href={link.href}
               ref={index === 0 ? firstLinkRef : undefined}
               onClick={() => setIsOpen(false)}
-              className="text-2xl font-headline uppercase font-bold text-on-surface hover:text-on-secondary transition-colors duration-300"
+              className="font-headline text-on-surface hover:text-on-secondary text-2xl font-bold uppercase transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -99,5 +99,5 @@ export function Header() {
         </nav>
       </div>
     </>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import { GALLERY_IMAGES, INSTAGRAM_URL } from "@/constants";
+import Image from 'next/image'
+import Link from 'next/link'
+import { GALLERY_IMAGES, INSTAGRAM_URL } from '@/data/projects'
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg
@@ -17,34 +17,29 @@ const InstagramIcon = ({ className }: { className?: string }) => (
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
-);
+)
 
 export function GallerySection() {
   return (
-    <section className="py-12 md:py-24 bg-surface" id="galeria">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter">
+    <section className="bg-surface py-12 md:py-24" id="galeria">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16 text-center">
+          <h2 className="font-headline text-4xl font-black tracking-tighter uppercase md:text-6xl">
             Portfólio
           </h2>
-          <span className="text-secondary font-headline uppercase tracking-[0.3em] text-sm font-bold mt-2">
+          <span className="text-secondary font-headline mt-2 text-sm font-bold tracking-[0.3em] uppercase">
             por felipe brunelli
           </span>
-          <div className="w-24 h-1 bg-secondary mx-auto mt-6" />
+          <div className="bg-secondary mx-auto mt-6 h-1 w-24" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {GALLERY_IMAGES.map((image) => (
             <div
               key={image.id}
-              className={`
-                overflow-hidden bg-surface hover:scale-105 transition-all
-                ${image.span === "row" ? "md:row-span-2 aspect-3/4" : "aspect-3/4"}
-                ${image.id === 0 ? "aspect-square md:aspect-3/4" : ""}
-                ${image.id === 0 || image.id === 0 ? "aspect-square" : ""}
-              `}
+              className={`bg-surface overflow-hidden transition-all hover:scale-105 ${image.span === 'row' ? 'aspect-3/4 md:row-span-2' : 'aspect-3/4'} ${image.id === 0 ? 'aspect-square md:aspect-3/4' : ''} ${image.id === 0 || image.id === 0 ? 'aspect-square' : ''} `}
             >
-              <div className="relative w-full h-full">
+              <div className="relative h-full w-full">
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -62,13 +57,13 @@ export function GallerySection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-on-surface font-headline font-bold uppercase tracking-widest hover:text-secondary transition-colors"
+            className="text-on-surface font-headline hover:text-secondary inline-flex items-center gap-3 font-bold tracking-widest uppercase transition-colors"
           >
             Ver mais no Instagram
-            <InstagramIcon className="w-6 h-6" />
+            <InstagramIcon className="h-6 w-6" />
           </Link>
         </div>
       </div>
     </section>
-  );
+  )
 }

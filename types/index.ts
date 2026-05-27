@@ -1,44 +1,44 @@
 export interface Testimonial {
-  id: number;
-  name: string;
-  text: string;
-  rating: number;
+  id: number
+  name: string
+  text: string
+  rating: number
 }
 
 export interface FaqItem {
-  id: number;
-  question: string;
-  answer: string;
+  id: number
+  question: string
+  answer: string
   cta?: {
-    label: string;
-    href: string;
-  };
+    label: string
+    href: string
+  }
 }
 
 export interface GalleryImage {
-  id: number;
-  src: string;
-  alt: string;
-  span?: "row" | "col" | "none";
+  id: number
+  src: string
+  alt: string
+  span?: 'row' | 'col' | 'none'
 }
 
 export interface ServiceCard {
-  id: number;
-  slug: string;
-  title: string;
-  description: string;
-  cta: string;
+  id: number
+  slug: string
+  title: string
+  description: string
+  cta: string
   image: {
-    src: string;
-    alt: string;
-  };
+    src: string
+    alt: string
+  }
   gallery: {
-    src: string;
-    alt: string;
-  }[];
+    src: string
+    alt: string
+  }[]
 }
 
 export interface NavLink {
-  label: string;
-  href: string;
+  label: string
+  href: string
 }

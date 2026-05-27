@@ -1,44 +1,44 @@
-import Image from "next/image";
-import Link from "next/link";
-import { WHATSAPP_URL, HERO_IMG_CONTENT } from "@/constants";
-import { MoveRight } from "lucide-react";
+import Image from 'next/image'
+import Link from 'next/link'
+import { WHATSAPP_URL, HERO_IMG_CONTENT } from '@/constants'
+import { MoveRight } from 'lucide-react'
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-dvh flex items-center justify-center pt-20 pb-16 md:pb-0 overflow-hidden bg-surface"
+      className="bg-surface relative flex min-h-dvh items-center justify-center overflow-hidden pt-20 pb-16 md:pb-0"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-linear-to-l from-transparent via-[#131313]/60 to-[#131313] z-10" />
+        <div className="absolute inset-0 z-10 bg-linear-to-l from-transparent via-[#131313]/60 to-[#131313]" />
         <Image
           src={HERO_IMG_CONTENT.src}
           alt={HERO_IMG_CONTENT.alt}
           fill
           priority
-          className="object-cover object-[40%_90%] md:object-[50%_90%] grayscale opacity-60"
+          className="object-cover object-[40%_90%] opacity-60 grayscale md:object-[50%_90%]"
           sizes="100vw"
         />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+      <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-12">
         <div className="md:col-span-8 lg:col-span-7">
-          <h1 className="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[1.1] text-on-surface mb-6">
-            Tatuagem Japonesa{" "}
+          <h1 className="font-headline text-on-surface mb-6 text-5xl leading-[1.1] font-black tracking-tighter uppercase md:text-7xl">
+            Tatuagem Japonesa{' '}
             <span className="text-secondary">Tradição Milenar</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-on-surface-variant max-w-xl mb-8 leading-relaxed">
+          <p className="text-on-surface-variant mb-8 max-w-xl text-lg leading-relaxed md:text-xl">
             Há mais de 10 anos criando obras únicas no corpo.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Link
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary-container text-on-surface px-10 py-5 font-headline text-lg font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all flex items-center gap-3"
+              className="bg-secondary-container text-on-surface font-headline flex items-center gap-3 px-10 py-5 text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
             >
               Solicitar Orçamento
             </Link>
@@ -46,5 +46,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,12 +1,12 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://brunelliirezumi.com",
+      url: 'https://brunelliirezumi.com',
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 1,
     },
-  ];
+  ]
 }

@@ -1,123 +1,115 @@
-import type { Metadata } from "next";
-import { Epilogue, Manrope } from "next/font/google";
-import "../app/styles/globals.css";
-import { FAQ_ITEMS } from "@/constants";
+import type { Metadata } from 'next'
+import { Epilogue, Manrope } from 'next/font/google'
+import './globals.css'
 
 const epilogue = Epilogue({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  variable: "--font-epilogue",
-  display: "swap",
-});
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-epilogue',
+  display: 'swap',
+})
 
 const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "600", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-});
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '800'],
+  variable: '--font-manrope',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brunelliirezumi.com"),
-  title: "BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP | 4.9★",
+  metadataBase: new URL('https://brunelli-irezumi.com'),
+  title: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP | 4.9★',
   description:
-    "Especialista em Tatuagem Japonesa Tradicional (Irezumi) e Coberturas de Alta Performance em Jundiaí. Mais de 10 anos de experiência como Modern Shokunin. Agende sua arte única.",
+    'Especialista em Tatuagem Japonesa Tradicional (Irezumi) e Coberturas de Alta Performance em Jundiaí. Mais de 10 anos de experiência como Modern Shokunin. Agende sua arte única.',
   keywords: [
-    "tatuagem japonesa",
-    "irezumi",
-    "tatuagem Jundiaí",
-    "cover-up tatuagem",
-    "tatuador Jundiaí",
-    "Brunelli Irezumi",
+    'tatuagem japonesa',
+    'irezumi',
+    'tatuagem Jundiaí',
+    'cover-up tatuagem',
+    'tatuador Jundiaí',
+    'Brunelli Irezumi',
   ],
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí",
+    title: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí',
     description:
-      "Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.",
-    type: "website",
-    locale: "pt_BR",
-    url: "https://brunelliirezumi.com",
+      'Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.',
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://brunelli-irezumi.com',
     images: [
       {
-        url: "/images/hero/hero1900p.webp",
+        url: 'https://brunelli-irezumi.com/images/hero/hero1900p.webp',
         width: 1900,
         height: 1267,
-        alt: "Brunelli Irezumi — Tatuagem Japonesa Tradicional em Jundiaí-SP",
+        alt: 'Brunelli Irezumi — Tatuagem Japonesa Tradicional em Jundiaí-SP',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí",
+    card: 'summary_large_image',
+    title: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí',
     description:
-      "Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.",
-    images: ["/images/hero/hero1900p.webp"],
+      'Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.',
+    images: ['/images/hero/hero1900p.webp'],
   },
-};
+}
 
 const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "TattooParlor",
-  name: "Brunelli Irezumi",
-  url: "https://brunelliirezumi.com",
-  telephone: "+5511976624286",
+  '@context': 'https://schema.org',
+  '@type': 'TattooParlor',
+  name: 'Brunelli Irezumi',
+  url: 'https://brunelli-irezumi.com',
+  telephone: '+5511976624286',
   address: {
-    "@type": "PostalAddress",
-    streetAddress: "R. Baronesa do Japi, 199 - Centro",
-    addressLocality: "Jundiaí",
-    postalCode: "13207-684",
-    addressRegion: "SP",
-    addressCountry: "BR",
+    '@type': 'PostalAddress',
+    streetAddress: 'R. Baronesa do Japi, 199 - Centro',
+    addressLocality: 'Jundiaí',
+    postalCode: '13207-684',
+    addressRegion: 'SP',
+    addressCountry: 'BR',
   },
   geo: {
-    "@type": "GeoCoordinates",
+    '@type': 'GeoCoordinates',
     latitude: -23.1904,
     longitude: -46.8845,
   },
   openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
+    '@type': 'OpeningHoursSpecification',
     dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
     ],
-    opens: "10:00",
-    closes: "20:00",
+    opens: '10:00',
+    closes: '20:00',
   },
   aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "53",
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '53',
   },
-};
+}
 
 const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [],
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="pt-BR" className="dark">
@@ -137,5 +129,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

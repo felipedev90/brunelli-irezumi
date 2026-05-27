@@ -5,7 +5,10 @@ import { MoveRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-dvh flex items-center justify-center pt-20 pb-16 md:pb-0 overflow-hidden bg-surface">
+    <section
+      id="hero"
+      className="relative min-h-dvh flex items-center justify-center pt-20 pb-16 md:pb-0 overflow-hidden bg-surface"
+    >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-linear-to-l from-transparent via-[#131313]/60 to-[#131313] z-10" />
@@ -38,7 +41,6 @@ export function HeroSection() {
               className="bg-secondary-container text-on-surface px-10 py-5 font-headline text-lg font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all flex items-center gap-3"
             >
               Solicitar Orçamento
-              <MoveRight size={24} />
             </Link>
           </div>
         </div>

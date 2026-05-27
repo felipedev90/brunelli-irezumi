@@ -31,7 +31,6 @@ export const STUDIO_RATING = {
 export const NAV_LINKS: NavLink[] = [
   { label: "O Artista", href: "#sobre" },
   { label: "Galeria", href: "#galeria" },
-  { label: "FAQ", href: "#faq" },
 ];
 
 export const HERO_IMG_CONTENT = {

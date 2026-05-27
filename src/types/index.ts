@@ -1,28 +1,11 @@
-export interface Testimonial {
-  id: number
-  name: string
-  text: string
-  rating: number
-}
-
-export interface FaqItem {
-  id: number
-  question: string
-  answer: string
-  cta?: {
-    label: string
-    href: string
-  }
-}
-
-export interface GalleryImage {
+export type GalleryImage = {
   id: number
   src: string
   alt: string
   span?: 'row' | 'col' | 'none'
 }
 
-export interface ServiceCard {
+export type ServiceCard = {
   id: number
   slug: string
   title: string
@@ -38,7 +21,7 @@ export interface ServiceCard {
   }[]
 }
 
-export interface NavLink {
+export type NavLink = {
   label: string
   href: string
 }

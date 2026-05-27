@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { WHATSAPP_URL, HERO_IMG_CONTENT } from '@/data/projects'
-import { MoveRight } from 'lucide-react'
 
 export function HeroSection() {
   return (

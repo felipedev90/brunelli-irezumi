@@ -1,10 +1,4 @@
-import type {
-  FaqItem,
-  GalleryImage,
-  NavLink,
-  ServiceCard,
-  Testimonial,
-} from '@/types'
+import type { GalleryImage, NavLink, ServiceCard } from '@/types'
 
 export const WHATSAPP_URL = 'https://wa.me/5511976624286'
 export const INSTAGRAM_URL = 'https://instagram.com/brunelli.irezumi/'

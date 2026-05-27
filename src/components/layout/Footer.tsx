@@ -5,7 +5,7 @@ import {
   NAV_LINKS,
   STUDIO_NAME,
   WHATSAPP_URL,
-} from '@/constants'
+} from '@/data/projects'
 
 const SOCIAL_LINKS = [
   { label: 'Instagram', href: INSTAGRAM_URL },

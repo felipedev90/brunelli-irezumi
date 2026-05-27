@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from '@/constants'
+import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from '@/data/projects'
 import { MobileNav } from './MobileNav'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { Menu, X } from 'lucide-react'

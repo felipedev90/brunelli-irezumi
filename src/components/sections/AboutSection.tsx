@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ABOUT_IMG } from '@/constants'
+import { ABOUT_IMG } from '@/data/projects'
 
 export function AboutSection() {
   return (

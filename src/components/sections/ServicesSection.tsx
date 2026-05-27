@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { SERVICES } from '@/constants'
+import { SERVICES } from '@/data/projects'
 import { MoveRight } from 'lucide-react'
 
 export function ServicesSection() {

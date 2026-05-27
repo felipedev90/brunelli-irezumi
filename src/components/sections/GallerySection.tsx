@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GALLERY_IMAGES, INSTAGRAM_URL } from '@/constants'
+import { GALLERY_IMAGES, INSTAGRAM_URL } from '@/data/projects'
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg

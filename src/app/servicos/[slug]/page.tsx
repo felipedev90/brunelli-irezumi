@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { SERVICES, WHATSAPP_URL } from '@/constants'
+import { SERVICES, WHATSAPP_URL } from '@/data/projects'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { MoveRight } from 'lucide-react'

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MAPS_URL, STUDIO_ADDRESS, STUDIO_HOURS } from '@/constants'
+import { MAPS_URL, STUDIO_ADDRESS, STUDIO_HOURS } from '@/data/projects'
 import { Clock, MapPinned } from 'lucide-react'
 
 export function LocationSection() {

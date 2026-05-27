@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { WHATSAPP_URL } from '@/constants'
+import { WHATSAPP_URL } from '@/data/projects'
 
 export function WhatsAppButton() {
   return (

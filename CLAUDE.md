@@ -62,7 +62,7 @@ export default function Card() {}
 
 ```tsx
 // ✅ Correto
-import { WHATSAPP_URL } from '@/constants'
+import { WHATSAPP_URL } from '@/data/projects'
 
 // ❌ Errado
 href = 'https://wa.me/5511999999999'

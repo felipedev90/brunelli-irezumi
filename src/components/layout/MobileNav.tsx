@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MAPS_URL, WHATSAPP_URL } from '@/constants'
+import { MAPS_URL, WHATSAPP_URL } from '@/data/projects'
 import { MapPinned, Phone, MessageCircleCheck } from 'lucide-react'
 
 export function MobileNav() {

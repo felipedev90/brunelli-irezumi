@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 @import 'tailwindcss';
 
-@theme {
+@theme inline {
   /* --- TONS DE CINZA, PRETO E BRANCO (ESTRUTURA) --- */
   --color-background: #131313; /* Preto suave (Fundo principal)*/
   --color-surface: #131313; /* Preto suave (Superfície) */
@@ -34,6 +34,9 @@
   /* --- TONS DOURADOS (TERTIARY) --- */
   --color-tertiary: #e9c349; /* Dourado claro (Cor terciária) */
   --color-on-tertiary: #3c2f00; /* Dourado escuro (Cor do texto em terciário) */
+
+  /* --- LARANJA --- */
+  --color-orange: #ff9800; /* Laranja vibrante (Cor de destaque) */
 
   /* --- FONTES --- */
   --font-headline: var(--font-epilogue), sans-serif;

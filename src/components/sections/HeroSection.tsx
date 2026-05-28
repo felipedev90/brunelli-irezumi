@@ -23,13 +23,15 @@ export function HeroSection() {
 
       <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-12">
         <div className="md:col-span-8 lg:col-span-7">
-          <h1 className="font-headline text-on-surface mb-6 text-5xl leading-[1.1] font-black tracking-tighter uppercase md:text-7xl">
-            Tatuagem Japonesa{' '}
-            <span className="text-secondary">Tradição Milenar</span>
+          <h1 className="font-headline text-on-surface mb-6 text-[2.9rem] leading-[1.1] font-black tracking-wide uppercase md:text-6xl lg:text-7xl">
+            Tatuagem Japonesa <br />
+            <span className="text-orange-500 lg:tracking-widest">
+              伝統を尊重する
+            </span>
           </h1>
 
-          <p className="text-on-surface-variant mb-8 max-w-xl text-lg leading-relaxed md:text-xl">
-            Há mais de 10 anos criando obras únicas no corpo.
+          <p className="text-on-background/80 font-body mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
+            Respeito a tradição.
           </p>
 
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
@@ -37,7 +39,7 @@ export function HeroSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary-container text-on-surface font-headline flex items-center gap-3 px-10 py-5 text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
+              className="font-headline text-primary flex items-center gap-3 border border-orange-500/80 px-8 py-5 text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
             >
               Solicitar Orçamento
             </Link>

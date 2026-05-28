@@ -36,7 +36,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-headline text-on-surface hover:text-secondary font-bold tracking-tighter uppercase transition-colors duration-300"
+              className="font-headline text-on-surface hover:text-secondary font-bold tracking-wide uppercase transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -45,7 +45,7 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-secondary-container text-on-surface font-headline px-6 py-2 text-sm font-bold uppercase transition-all hover:scale-105 active:scale-95"
+            className="text-on-surface font-headline bg-orange-500/80 px-6 py-2 text-sm font-bold tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
           >
             Agendamento
           </Link>
@@ -53,7 +53,7 @@ export function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="text-secondary md:hidden"
+          className="text-orange-500 md:hidden"
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"

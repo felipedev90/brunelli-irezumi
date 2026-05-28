@@ -4,19 +4,22 @@ import { Clock, MapPinned } from 'lucide-react'
 
 export function LocationSection() {
   return (
-    <section className="bg-surface py-12 md:py-24">
+    <section
+      className="border-outline-variant from-bg-surface to-surface-container-high border-t bg-linear-to-b py-12 md:py-24"
+      id="localizacao"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="bg-outline-variant/10 grid gap-px md:grid-cols-2">
           {/* Info */}
           <div className="bg-surface-container-low p-12">
-            <h2 className="font-headline mb-8 text-4xl font-black tracking-tighter uppercase">
+            <h2 className="font-headline mb-8 text-4xl font-black tracking-wide uppercase">
               Onde Estamos
             </h2>
 
             <div className="space-y-8">
               <div className="flex gap-4">
                 <MapPinned
-                  className="text-secondary shrink-0"
+                  className="shrink-0 text-orange-500"
                   aria-hidden="true"
                 />
                 <div>
@@ -33,7 +36,10 @@ export function LocationSection() {
               </div>
 
               <div className="flex gap-4">
-                <Clock className="text-secondary shrink-0" aria-hidden="true" />
+                <Clock
+                  className="shrink-0 text-orange-500"
+                  aria-hidden="true"
+                />
                 <div>
                   <p className="text-on-surface font-bold">
                     Horário de Atendimento
@@ -46,7 +52,7 @@ export function LocationSection() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-secondary text-secondary font-headline hover:bg-secondary hover:text-on-secondary inline-block border px-8 py-4 text-sm font-bold uppercase transition-all"
+                className="font-headline hover:text-on-surface inline-block border border-orange-500 px-8 py-4 text-sm font-bold text-orange-500 uppercase transition-all hover:bg-orange-500/10"
               >
                 Como Chegar
               </Link>

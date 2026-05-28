@@ -7,7 +7,7 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-20 px-6 md:grid-cols-2">
         {/* Image column */}
         <div className="relative">
-          <div className="font-headline absolute top-96 left-48 z-0 text-center text-[10rem] leading-none font-black text-orange-500/10 md:-top-20 md:left-72 lg:-left-7 lg:text-orange-500/60 xl:-top-5 xl:-left-10">
+          <div className="font-headline absolute top-96 left-48 z-0 text-center text-[10rem] leading-none font-black text-orange-500/10 md:-top-20 md:left-72 lg:-left-7 lg:text-orange-500/30 xl:-top-5 xl:-left-10">
             ブ<br />ル<br />ネ<br />リ
           </div>
           <div className="relative z-10 aspect-square w-full overflow-hidden lg:ml-14">
@@ -27,15 +27,17 @@ export function AboutSection() {
           <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
             O Artista
           </span>
-          <h2 className="font-headline mt-4 mb-8 text-4xl font-black tracking-tighter uppercase md:text-6xl">
-            Shokunin
+          <h2 className="font-headline mt-4 mb-8 text-4xl font-black tracking-widest uppercase md:text-6xl">
+            GANBATTE
           </h2>
 
           <div className="text-on-surface lg:text-on-surface-variant space-y-6 text-lg leading-relaxed">
             <p>
-              Brunelli encarna o conceito do{' '}
-              <strong className="text-orange-500">Shokunin</strong> - O artesão
-              que dedica sua vida ao aperfeiçoamento constante de sua técnica.
+              Felipe Brunelli é adepto da poderosa expressão japonesa{' '}
+              <strong className="text-orange-500">Ganbatte</strong> (頑張って):{' '}
+              Diferente apenas do nosso "boa sorte", ela trás mais o sentido de
+              "faça o seu melhor", "esforce-se sempre" e "persista diante das
+              dificuldades".
             </p>
             <p>
               Com mais de uma década imerso na cultura e estética japonesa, seu

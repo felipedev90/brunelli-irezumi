@@ -23,14 +23,16 @@ export function GallerySection() {
   return (
     <section className="bg-surface py-12 md:py-24" id="galeria">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 text-center">
-          <h2 className="font-headline text-4xl font-black tracking-tighter uppercase md:text-6xl">
-            Portfólio
-          </h2>
-          <span className="text-secondary font-headline mt-2 text-sm font-bold tracking-[0.3em] uppercase">
-            por felipe brunelli
-          </span>
-          <div className="bg-secondary mx-auto mt-6 h-1 w-24" />
+        <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div className="bg-outline-variant/20 mx-8 hidden h-0.5 flex-1 lg:block" />
+          <div>
+            <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
+              By Felipe Brunelli
+            </span>
+            <h2 className="font-headline mt-2 text-4xl font-black tracking-wide uppercase md:text-6xl">
+              Portfólio
+            </h2>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
@@ -52,15 +54,15 @@ export function GallerySection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 flex items-center justify-center text-center">
           <Link
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-on-surface font-headline hover:text-secondary inline-flex items-center gap-3 font-bold tracking-widest uppercase transition-colors"
+            className="text-on-surface font-headline inline-flex items-center gap-2 text-lg font-bold tracking-widest uppercase"
           >
-            Ver mais no Instagram
-            <InstagramIcon className="h-6 w-6" />
+            Ver mais no <span className="text-orange-500">Instagram</span>
+            <InstagramIcon className="mb-1 h-5 w-5 text-orange-500" />
           </Link>
         </div>
       </div>

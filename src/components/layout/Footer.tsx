@@ -15,7 +15,7 @@ const SOCIAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-surface-container-low border-outline-variant border-t">
+    <footer className="bg-surface-container border-outline-variant border-t">
       {/* Container Principal: Usa Grid para distribuir o espaço */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-6 py-16 md:grid-cols-12">
         {/* Lado Esquerdo: Logo e Descrição (Ocupa 5 colunas no desktop) */}

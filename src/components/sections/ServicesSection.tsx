@@ -9,14 +9,14 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <span className="text-secondary font-headline text-sm font-bold tracking-[0.3em] uppercase">
+            <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
               Especialidades
             </span>
-            <h2 className="font-headline mt-2 text-4xl font-black tracking-tighter uppercase md:text-6xl">
+            <h2 className="font-headline mt-2 text-4xl font-black tracking-wide uppercase md:text-6xl">
               Arte Irezumi
             </h2>
           </div>
-          <div className="bg-outline-variant/20 mx-8 hidden h-0.5 flex-1 md:block" />
+          <div className="bg-outline-variant/20 mx-8 hidden h-0.5 flex-1 lg:block" />
         </div>
 
         <div className="md:bg-outline-variant/10 grid gap-5 md:grid-cols-2 md:gap-px">
@@ -35,16 +35,16 @@ export function ServicesSection() {
               />
               <div className="absolute inset-0 bg-linear-to-t from-[#131313] via-transparent to-transparent" />
 
-              <div className="absolute bottom-0 p-4 md:p-10">
-                <h3 className="font-headline mb-4 text-2xl font-bold uppercase md:text-3xl">
+              <div className="absolute bottom-0 p-4">
+                <h3 className="font-headline text-2xl font-bold tracking-wide uppercase md:text-3xl">
                   {service.title}
                 </h3>
-                <p className="text-on-surface md:text-on-surface-variant mb-6 max-w-sm">
+                <p className="text-on-surface/70 font-body md:text-on-surface-variant mb-6 max-w-sm">
                   {service.description}
                 </p>
                 <Link
                   href={`/servicos/${service.slug}`}
-                  className="text-secondary font-headline flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-transform group-hover:translate-x-2"
+                  className="font-headline flex items-center gap-2 text-sm font-bold tracking-widest text-orange-500 uppercase transition-transform group-hover:translate-x-2"
                 >
                   {service.cta}
                   <MoveRight size={20} aria-hidden="true" />

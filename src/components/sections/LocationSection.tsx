@@ -11,12 +11,12 @@ export function LocationSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="bg-outline-variant/10 grid gap-px md:grid-cols-2">
           {/* Info */}
-          <div className="bg-surface-container-low p-12">
-            <h2 className="font-headline mb-8 text-4xl font-black tracking-wide uppercase">
+          <div className="bg-surface-container-low flex flex-col items-center p-12">
+            <h2 className="font-headline mb-8 text-center text-4xl font-black tracking-wide uppercase md:text-left">
               Onde Estamos
             </h2>
 
-            <div className="space-y-8">
+            <div className="flex flex-col space-y-8">
               <div className="flex gap-4">
                 <MapPinned
                   className="shrink-0 text-orange-500"
@@ -52,7 +52,7 @@ export function LocationSection() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-headline hover:text-on-surface inline-block border border-orange-500 px-8 py-4 text-sm font-bold text-orange-500 uppercase transition-all hover:bg-orange-500/10"
+                className="font-headline hover:text-on-surface inline-block border border-orange-500 px-8 py-4 text-center text-sm font-bold text-orange-500 uppercase transition-all hover:bg-orange-500/10"
               >
                 Como Chegar
               </Link>

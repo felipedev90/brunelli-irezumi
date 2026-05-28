@@ -3,6 +3,7 @@ import type { GalleryImage, NavLink, ServiceCard } from '@/types'
 export const WHATSAPP_URL = 'https://wa.me/5511976624286'
 export const INSTAGRAM_URL = 'https://instagram.com/brunelli.irezumi/'
 export const MAPS_URL = 'https://maps.app.goo.gl/UkwhKQAUF1nbwSTF7'
+export const TIKTOK_URL = 'https://www.tiktok.com/@brunelli.irezumi'
 
 export const STUDIO_NAME = 'Brunelli Irezumi'
 export const STUDIO_TAGLINE = 'The Modern Shokunin'
@@ -17,13 +18,9 @@ export const STUDIO_ADDRESS = {
 
 export const STUDIO_HOURS = 'Segunda a Sábado: 10h às 20h'
 
-export const STUDIO_RATING = {
-  value: 4.9,
-  count: 53,
-}
-
 export const NAV_LINKS: NavLink[] = [
   { label: 'O Artista', href: '#sobre' },
+  { label: 'Especialidades', href: '#servicos' },
   { label: 'Galeria', href: '#galeria' },
 ]
 

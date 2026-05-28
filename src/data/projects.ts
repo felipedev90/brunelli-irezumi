@@ -106,7 +106,7 @@ export const SERVICES: ServiceCard[] = [
 ]
 
 export const ABOUT_IMG = {
-  src: '/images/about/about1200p.webp',
+  src: '/images/about/about800p.webp',
   alt: 'Imagem do Felipe Brunelli',
 }
 

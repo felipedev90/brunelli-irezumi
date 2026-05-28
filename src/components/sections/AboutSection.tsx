@@ -7,10 +7,10 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-20 px-6 md:grid-cols-2">
         {/* Image column */}
         <div className="relative">
-          <div className="text-surface-container-high font-headline absolute -top-10 -left-10 z-0 text-[12rem] leading-none font-black select-none">
-            匠
+          <div className="font-headline absolute top-96 left-48 z-0 text-center text-[10rem] leading-none font-black text-orange-500/10 md:-top-20 md:left-72 lg:-left-7 lg:text-orange-500/60 xl:-top-5 xl:-left-10">
+            ブ<br />ル<br />ネ<br />リ
           </div>
-          <div className="border-secondary relative z-10 aspect-square w-full overflow-hidden border-l-8">
+          <div className="relative z-10 aspect-square w-full overflow-hidden lg:ml-14">
             <Image
               src={ABOUT_IMG.src}
               alt={ABOUT_IMG.alt}
@@ -20,47 +20,39 @@ export function AboutSection() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
-
-          <div className="bg-secondary absolute -right-2 -bottom-20 z-20 p-8 md:-right-6 md:-bottom-6">
-            <span className="font-headline text-on-secondary block text-2xl leading-none font-black md:text-5xl">
-              10+
-            </span>
-            <span className="font-headline text-on-secondary mt-1 block text-sm font-bold tracking-widest uppercase">
-              Anos de Maestria
-            </span>
-          </div>
         </div>
 
         {/* Text column */}
         <div>
-          <span className="text-secondary font-headline text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
             O Artista
           </span>
           <h2 className="font-headline mt-4 mb-8 text-4xl font-black tracking-tighter uppercase md:text-6xl">
             Shokunin
           </h2>
 
-          <div className="text-on-surface-variant space-y-6 text-lg leading-relaxed">
+          <div className="text-on-surface lg:text-on-surface-variant space-y-6 text-lg leading-relaxed">
             <p>
               Brunelli encarna o conceito do{' '}
-              <strong className="text-on-surface">Shokunin</strong> - O artesão
+              <strong className="text-orange-500">Shokunin</strong> - O artesão
               que dedica sua vida ao aperfeiçoamento constante de sua técnica.
             </p>
             <p>
-              Com mais de uma década de imersão na cultura e estética japonesa,
-              seu trabalho no The Garden Estudio em Jundiaí é referência em
-              precisão técnica e fluidez.
+              Com mais de uma década imerso na cultura e estética japonesa, seu
+              trabalho é baseado em trazer a riqueza da tatuagem tradicional
+              para seus clientes. Respeitando a tradição, seu principal objetivo
+              é garantir um trabalho clássico, limpo, duradouro e significativo
             </p>
             <p>
-              Cada projeto é iniciado do zero, respeitando as curvas do corpo do
-              cliente e a profundidade simbólica da arte oriental tradicional.
+              Cada projeto é iniciado do zero, respeitando a anatomia do corpo,
+              a profundidade simbólica da arte e a estética tradicional da
+              tatuagem japonesa.
             </p>
           </div>
 
-          <blockquote className="bg-surface-container-high border-secondary text-on-surface-variant mt-10 border-l-4 p-6 italic">
-            &ldquo;A tatuagem japonesa é uma jornada de permanência. Meu dever é
-            garantir que cada traço conte uma história de força e
-            tradição.&rdquo;
+          <blockquote className="bg-surface-container-high text-on-surface-variant mt-10 border-l-4 border-orange-500 p-6 italic">
+            &ldquo;A tatuagem japonesa é um processo que exige paciência,
+            persistência e dedicação. Tanto minha quanto do cliente.&rdquo;
           </blockquote>
         </div>
       </div>

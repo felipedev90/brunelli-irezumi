@@ -53,7 +53,7 @@ export function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="text-secondary md:hidden"
+          className="text-orange-500 md:hidden"
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"

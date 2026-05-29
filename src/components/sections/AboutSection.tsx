@@ -27,7 +27,7 @@ export function AboutSection() {
           <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
             O Artista
           </span>
-          <h2 className="font-headline mt-4 mb-8 text-4xl font-black tracking-widest uppercase md:text-6xl">
+          <h2 className="font-headline mt-4 mb-8 text-4xl font-black tracking-wide uppercase md:text-6xl md:tracking-wide lg:tracking-widest">
             GANBATTE
           </h2>
 

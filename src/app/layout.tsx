@@ -17,8 +17,11 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://brunelli-irezumi.com'),
-  title: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP | 4.9★',
+  metadataBase: new URL('https://brunelli-irezumi.com.br'),
+  title: {
+    default: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP | 4.9★',
+    template: '%s | Brunelli Irezumi',
+  },
   description:
     'Especialista em Tatuagem Japonesa Tradicional (Irezumi) e Coberturas de Alta Performance em Jundiaí. Mais de 10 anos de experiência como Modern Shokunin. Agende sua arte única.',
   keywords: [
@@ -42,10 +45,11 @@ export const metadata: Metadata = {
       'Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.',
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://brunelli-irezumi.com',
+    url: 'https://brunelli-irezumi.com.br',
+    siteName: 'Brunelli Irezumi',
     images: [
       {
-        url: 'https://brunelli-irezumi.com/images/hero/hero1900p.webp',
+        url: 'https://brunelli-irezumi.com.br/images/hero/hero1900p.webp',
         width: 1900,
         height: 1267,
         alt: 'Brunelli Irezumi — Tatuagem Japonesa Tradicional em Jundiaí-SP',
@@ -65,7 +69,7 @@ const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TattooParlor',
   name: 'Brunelli Irezumi',
-  url: 'https://brunelli-irezumi.com',
+  url: 'https://brunelli-irezumi.com.br',
   telephone: '+5511976624286',
   address: {
     '@type': 'PostalAddress',
@@ -100,12 +104,6 @@ const localBusinessJsonLd = {
   },
 }
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [],
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -119,10 +117,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessJsonLd),
           }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body className={`${epilogue.variable} ${manrope.variable} font-body`}>

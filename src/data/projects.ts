@@ -117,12 +117,22 @@ export const SERVICES: ServiceCard[] = [
     gallery: [
       {
         id: 1,
-        src: '/images/servicesCoverups/servicescoverup01.webp',
+        src: '/images/servicesCoverups/coverup01.webp',
         alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
       },
       {
         id: 2,
-        src: '/images/servicesCoverups/servicescoverup02.webp',
+        src: '/images/servicesCoverups/coverup02.webp',
+        alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
+      },
+      {
+        id: 3,
+        src: '/images/servicesCoverups/coverup03.webp',
+        alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
+      },
+      {
+        id: 4,
+        src: '/images/servicesCoverups/coverup04.webp',
         alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
       },
     ],
@@ -137,7 +147,7 @@ export const ABOUT_IMG = {
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: '/images/gallery/brunelli_portfolio09.webp',
+    src: '/images/gallery/brunelli_portfolio10.webp',
     alt: 'Backpiece Hannya e a Serpente',
     span: 'none',
   },

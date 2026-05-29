@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { GalleryGrid } from '@/components/ui/GalleryGrid'
 import Link from 'next/link'
 import { GALLERY_IMAGES, INSTAGRAM_URL } from '@/data/projects'
 
@@ -35,24 +35,7 @@ export function GallerySection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {GALLERY_IMAGES.map((image) => (
-            <div
-              key={image.id}
-              className={`bg-surface overflow-hidden transition-all hover:scale-105 ${image.span === 'row' ? 'aspect-3/4 md:row-span-2' : 'aspect-3/4'} ${image.id === 0 ? 'aspect-square md:aspect-3/4' : ''} ${image.id === 0 || image.id === 0 ? 'aspect-square' : ''} `}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <GalleryGrid images={GALLERY_IMAGES} />
 
         <div className="mt-12 flex items-center justify-center text-center">
           <Link

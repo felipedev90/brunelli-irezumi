@@ -42,39 +42,64 @@ export const SERVICES: ServiceCard[] = [
     },
     gallery: [
       {
-        src: '/images/servicesDrawings/servicesdrawings01.webp',
+        id: 2,
+        src: '/images/servicesDrawings/drawing01.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings02.webp',
+        id: 1,
+        src: '/images/servicesDrawings/drawing00.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings03.webp',
+        id: 8,
+        src: '/images/servicesDrawings/drawing07.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings04.webp',
+        id: 3,
+        src: '/images/servicesDrawings/drawing02.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings05.webp',
+        id: 4,
+        src: '/images/servicesDrawings/drawing03.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings06.webp',
+        id: 5,
+        src: '/images/servicesDrawings/drawing04.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings07.webp',
+        id: 6,
+        src: '/images/servicesDrawings/drawing05.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings09.webp',
+        id: 7,
+        src: '/images/servicesDrawings/drawing06.webp',
+        alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
+      },
+
+      {
+        id: 9,
+        src: '/images/servicesDrawings/drawing08.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
       {
-        src: '/images/servicesDrawings/servicesdrawings08.webp',
+        id: 10,
+        src: '/images/servicesDrawings/drawing09.webp',
+        alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
+      },
+      {
+        id: 12,
+        src: '/images/servicesDrawings/drawing11.webp',
+        alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
+      },
+      {
+        id: 11,
+        src: '/images/servicesDrawings/drawing10.webp',
         alt: 'Desenho tradicional feito à mão por Felipe Brunelli',
       },
     ],
@@ -91,10 +116,12 @@ export const SERVICES: ServiceCard[] = [
     },
     gallery: [
       {
+        id: 1,
         src: '/images/servicesCoverups/servicescoverup01.webp',
         alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
       },
       {
+        id: 2,
         src: '/images/servicesCoverups/servicescoverup02.webp',
         alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
       },
@@ -110,38 +137,56 @@ export const ABOUT_IMG = {
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: '/images/gallery/brunelli_gallery01.webp',
+    src: '/images/gallery/brunelli_portfolio09.webp',
     alt: 'Backpiece Hannya e a Serpente',
     span: 'none',
   },
   {
     id: 2,
-    src: '/images/gallery/brunelli_gallery02.webp',
-    alt: 'Legpiece com Karajishi e peonias ',
-    span: 'none',
-  },
-  {
-    id: 3,
-    src: '/images/gallery/brunelli_gallery03.webp',
+    src: '/images/gallery/brunelli_portfolio02.webp',
     alt: 'Armpiece com Serpente e cranio',
     span: 'none',
   },
   {
-    id: 4,
-    src: '/images/gallery/brunelli_gallery04.webp',
-    alt: 'Backpiece Hannya',
+    id: 3,
+    src: '/images/gallery/brunelli_portfolio01.webp',
+    alt: 'Legpiece com Karajishi e peonias ',
     span: 'none',
   },
   {
-    id: 5,
-    src: '/images/gallery/brunelli_gallery05.webp',
+    id: 4,
+    src: '/images/gallery/brunelli_portfolio04.webp',
     alt: 'Backpiece Raijin e Fujin',
     span: 'none',
   },
   {
+    id: 5,
+    src: '/images/gallery/brunelli_portfolio03.webp',
+    alt: 'Backpiece Hannya',
+    span: 'none',
+  },
+  {
     id: 6,
-    src: '/images/gallery/brunelli_gallery06.webp',
+    src: '/images/gallery/brunelli_portfolio05.webp',
     alt: 'Mascara Tengu',
+    span: 'none',
+  },
+  {
+    id: 7,
+    src: '/images/gallery/brunelli_portfolio06.webp',
+    alt: 'Backpiece com Hannya, Serpente e Peonias',
+    span: 'none',
+  },
+  {
+    id: 8,
+    src: '/images/gallery/brunelli_portfolio07.webp',
+    alt: 'Backpiece com Hannya, Serpente e Peonias',
+    span: 'none',
+  },
+  {
+    id: 9,
+    src: '/images/gallery/brunelli_portfolio08.webp',
+    alt: 'Backpiece com Hannya, Serpente e Peonias',
     span: 'none',
   },
 ]

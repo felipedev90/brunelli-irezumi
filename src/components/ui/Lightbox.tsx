@@ -55,7 +55,7 @@ export function Lightbox({
         className="absolute top-4 right-4 text-white/70 transition-colors hover:text-white"
         aria-label="Fechar"
       >
-        <span className="text-body cursor-pointer p-5 text-2xl text-red-600 transition-transform hover:scale-110 hover:text-red-400">
+        <span className="text-body cursor-pointer px-1 py-4 text-2xl text-red-600 transition-transform hover:scale-110 hover:text-red-400">
           x
         </span>
       </button>

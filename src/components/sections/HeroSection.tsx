@@ -22,7 +22,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-12">
-        <div className="md:col-span-8 lg:col-span-7">
+        <div className="md:col-span-8">
           <h1 className="font-headline text-on-surface mb-6 text-[2.9rem] leading-[1.1] font-black tracking-wide uppercase md:text-6xl lg:text-7xl">
             Tatuagem Japonesa <br />
             <span className="text-orange-500 lg:tracking-widest">

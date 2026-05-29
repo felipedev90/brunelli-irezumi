@@ -13,7 +13,13 @@ export function Header() {
 
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = 'hidden'
       firstLinkRef.current?.focus()
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
     }
   }, [isOpen])
 
@@ -30,7 +36,7 @@ export function Header() {
         {/* Desktop Nav */}
         <nav
           aria-label="Navegação principal"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-8 lg:flex"
         >
           {NAV_LINKS.map((link) => (
             <Link
@@ -45,6 +51,7 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
             className="text-on-surface font-headline bg-orange-500/80 px-6 py-2 text-sm font-bold tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
           >
             Agendamento
@@ -53,7 +60,7 @@ export function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="text-orange-500 md:hidden"
+          className="text-orange-500 lg:hidden"
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -64,7 +71,7 @@ export function Header() {
         </button>
       </header>
 
-      <div className={`md:block ${isOpen ? 'hidden' : 'block'}`}>
+      <div className={`${isOpen ? 'hidden' : 'block'} lg:block`}>
         <WhatsAppButton />
       </div>
 
@@ -75,12 +82,11 @@ export function Header() {
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!isOpen}
-        className={`bg-background fixed inset-0 z-40 transition-transform duration-300 md:hidden ${
+        className={`bg-background fixed inset-0 z-40 transition-transform duration-300 lg:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <MobileNav />
-
         <nav
           aria-label="Navegação mobile"
           className="flex h-full flex-col items-center justify-center gap-8"

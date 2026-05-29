@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer'
 import type { Metadata } from 'next'
 import { GalleryGrid } from '@/components/ui/GalleryGrid'
 
-interface Props {
+type Props = {
   params: Promise<{ slug: string }>
 }
 
@@ -19,9 +19,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = SERVICES.find((s) => s.slug === slug)
   if (!service) return {}
+
   return {
-    title: `${service.title} | Brunelli Irezumi`,
+    title: service.title,
     description: service.description,
+    alternates: {
+      canonical: `/servicos/${slug}`,
+    },
+    openGraph: {
+      title: `${service.title} | Brunelli Irezumi`,
+      description: service.description,
+      url: `https://brunelli-irezumi.com.br/servicos/${slug}`,
+      images: [
+        {
+          url: `https://brunelli-irezumi.com.br${service.image.src}`,
+          alt: service.image.alt,
+        },
+      ],
+    },
   }
 }
 

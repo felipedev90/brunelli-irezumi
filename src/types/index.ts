@@ -16,6 +16,7 @@ export type ServiceCard = {
     alt: string
   }
   gallery: {
+    id: number
     src: string
     alt: string
   }[]

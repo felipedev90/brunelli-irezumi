@@ -15,7 +15,7 @@ export function Cta() {
           priority
           quality={90}
           className="object-cover object-[40%_90%] opacity-75 grayscale md:object-[50%_90%]"
-          sizes="(max-width: 768px) 200vw, 100vw"
+          sizes="(max-width: 768px) 150vw, 100vw"
         />
       </div>
     </section>

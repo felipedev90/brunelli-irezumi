@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { WHATSAPP_URL, HERO_IMG_CONTENT } from '@/data/projects'
+import { RevealOnScroll } from '@/components/ui/RevealOnScroll'
+import { ShimmerText } from '@/components/ui/ShimmerText'
 
 export function HeroSection() {
   return (
@@ -23,26 +25,34 @@ export function HeroSection() {
 
       <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-12">
         <div className="md:col-span-8">
-          <h1 className="font-headline text-on-surface mb-6 text-[2.9rem] leading-[1.1] font-black tracking-wide uppercase md:text-6xl lg:text-7xl">
-            Tatuagem Japonesa <br />
-            <span className="text-orange-500 lg:tracking-widest">
-              伝統を尊重する
-            </span>
-          </h1>
+          <RevealOnScroll delay={0.2}>
+            <h1 className="font-headline text-on-surface/90 mb-6 text-[2.9rem] leading-[1.1] font-black tracking-wide uppercase md:text-6xl lg:text-8xl">
+              <ShimmerText variant="night" className="block">
+                Tatuagem Japonesa <br />
+              </ShimmerText>
+              <span className="text-orange-500 lg:tracking-widest">
+                伝統を尊重する
+              </span>
+            </h1>
+          </RevealOnScroll>
 
-          <p className="text-on-background/80 font-body mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
-            Respeito a tradição.
-          </p>
+          <RevealOnScroll delay={0.2}>
+            <p className="text-on-background font-headline mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
+              Respeito a tradição.
+            </p>
+          </RevealOnScroll>
 
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <Link
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-headline text-primary flex items-center gap-3 border border-orange-500/80 px-8 py-5 text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
-            >
-              Solicitar Orçamento
-            </Link>
+            <RevealOnScroll delay={0.2}>
+              <Link
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-headline text-primary flex items-center gap-3 border border-orange-500/80 px-8 py-5 text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
+              >
+                Solicitar Orçamento
+              </Link>
+            </RevealOnScroll>
           </div>
         </div>
       </div>

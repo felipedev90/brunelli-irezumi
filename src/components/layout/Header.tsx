@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { NAV_LINKS, STUDIO_NAME, WHATSAPP_URL } from '@/data/projects'
+import { NAV_LINKS, WHATSAPP_URL } from '@/data/projects'
 import { MobileNav } from './MobileNav'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { Menu, X } from 'lucide-react'
@@ -30,7 +30,7 @@ export function Header() {
           href="#hero"
           className="text-on-surface font-headline text-xl font-black tracking-widest uppercase"
         >
-          {STUDIO_NAME}
+          <span className="text-orange-500">Brunelli </span>Irezumi
         </Link>
 
         {/* Desktop Nav */}
@@ -52,7 +52,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="text-on-surface font-headline bg-orange-500/80 px-6 py-2 text-sm font-bold tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
+            className="text-on-surface font-headline bg-orange-500/90 px-6 py-2 text-sm font-bold tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
           >
             Agendamento
           </Link>

@@ -3,19 +3,34 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { GallerySection } from '@/components/sections/GallerySection'
+import { Cta } from '@/components/sections/Cta'
 import { LocationSection } from '@/components/sections/LocationSection'
 import { Footer } from '@/components/layout/Footer'
+import { RevealOnScroll } from '@/components/ui/RevealOnScroll'
 
 export default function Home() {
   return (
     <>
       <Header />
       <main id="main-content">
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <GallerySection />
-        <LocationSection />
+        <RevealOnScroll delay={0.1}>
+          <HeroSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.2}>
+          <AboutSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.3}>
+          <ServicesSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.4}>
+          <GallerySection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.5}>
+          <Cta />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.6}>
+          <LocationSection />
+        </RevealOnScroll>
       </main>
       <Footer />
     </>

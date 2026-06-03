@@ -30,7 +30,7 @@ export const HERO_IMG_CONTENT = {
 }
 
 export const CTA_IMAGE = {
-  src: '/images/cta/studio.webp',
+  src: '/images/cta/studio2.webp',
   alt: 'Imagem do estúdio de tatuagem Brunelli Irezumi',
 }
 

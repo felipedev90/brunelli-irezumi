@@ -23,9 +23,6 @@
   --color-on-secondary: #680011;
   --color-secondary-container: #ad0224;
 
-  /* --- LARANJA --- */
-  --color-orange-500: #ff9800;
-
   /* --- FONTES --- */
   --font-headline: var(--font-epilogue), sans-serif;
   --font-body: var(--font-manrope), sans-serif;

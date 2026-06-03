@@ -29,6 +29,11 @@ export const HERO_IMG_CONTENT = {
   alt: 'Felipe Brunelli aplicando uma tatuagem tradicional japonesa.',
 }
 
+export const CTA_IMAGE = {
+  src: '/images/cta/studio.webp',
+  alt: 'Imagem do estúdio de tatuagem Brunelli Irezumi',
+}
+
 export const SERVICES: ServiceCard[] = [
   {
     id: 1,
@@ -147,7 +152,7 @@ export const ABOUT_IMG = {
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: '/images/gallery/brunelli_portfolio10.webp',
+    src: '/images/gallery/brunelli_portfolio11.webp',
     alt: 'Backpiece Hannya e a Serpente',
     span: 'none',
   },

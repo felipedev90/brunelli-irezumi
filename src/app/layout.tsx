@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Epilogue, Manrope } from 'next/font/google'
+import { cookies } from 'next/headers'
+import { Skeleton } from '@/components/layout/Skeleton'
 import './globals.css'
 
 const epilogue = Epilogue({
@@ -104,11 +106,14 @@ const localBusinessJsonLd = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = await cookies()
+  const skeletonShown = cookieStore.get('skeleton_shown')?.value === '1'
+
   return (
     <html lang="pt-BR" className="dark">
       <head>
@@ -120,6 +125,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${epilogue.variable} ${manrope.variable} font-body`}>
+        <Skeleton initialShown={skeletonShown} />
         {children}
       </body>
     </html>

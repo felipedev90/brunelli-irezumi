@@ -13,7 +13,7 @@ export function LocationSection() {
           {/* Info */}
           <div className="bg-surface-container-low flex flex-col items-center p-12">
             <h2 className="font-headline mb-8 text-center text-4xl font-black tracking-wide uppercase md:text-left">
-              Onde Estamos
+              Onde estamos
             </h2>
 
             <div className="flex flex-col space-y-8">

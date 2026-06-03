@@ -3,44 +3,67 @@
 
 @theme inline {
   /* --- TONS DE CINZA, PRETO E BRANCO (ESTRUTURA) --- */
-  --color-background: #131313; /* Preto suave (Fundo principal)*/
-  --color-surface: #131313; /* Preto suave (Superfície) */
-  --color-surface-dim: #131313; /* Preto suave (Superfície em repouso) */
-  --color-surface-bright: #393939; /* Cinza chumbo (Superfície em destaque) */
-  --color-surface-container-lowest: #0e0e0e; /* Preto profundo (Container mais baixo) */
-  --color-surface-container-low: #1c1b1b; /* Preto suave (Container baixo) */
-  --color-surface-container: #20201f; /* Grafite médio (Container padrão) */
-  --color-surface-container-high: #2a2a2a; /* Cinza asfalto (Container alto) */
-  --color-surface-container-highest: #353535; /* Cinza rato (Container mais alto) */
-  --color-surface-variant: #353535; /* Cinza médio (Variante de superfície) */
-  --color-on-surface: #e5e2e1; /* Branco gelo (Cor do texto principal) */
-  --color-on-background: #e5e2e1; /* Branco gelo (Cor do texto de fundo) */
-  --color-on-surface-variant: #c4c7c7; /* Cinza claro (Cor do texto de superfície variante) */
-  --color-outline: #8e9192; /* Cinza médio (Cor do contorno) */
-  --color-outline-variant: #444748; /* Cinza escuro (Variante do contorno) */
+  --color-background: #131313;
+  --color-surface: #131313;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #20201f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-variant: #353535;
+  --color-on-surface: #e5e2e1;
+  --color-on-background: #e5e2e1;
+  --color-on-surface-variant: #c4c7c7;
+  --color-outline-variant: #444748;
+  --color-outline: #a4a4a4;
 
   /* --- TONS METÁLICOS / CINZA CLARO (PRIMARY) --- */
-  --color-primary: #c6c6c6; /* Cinza claro (Cor primária) */
-  --color-on-primary: #303030; /* Preto suave (Cor do texto em primário) */
-  --color-primary-container: #121212; /* Preto profundo (Container primário) */
-  --color-on-primary-container: #7d7d7d; /* Cinza médio (Cor do texto em container primário) */
+  --color-primary: #c6c6c6;
 
   /* --- TONS ROSA SALMÃO / VINHO (SECONDARY) --- */
-  --color-secondary: #ffb3b1; /* Rosa salmão claro (Cor secundária) */
-  --color-on-secondary: #680011; /* Vermelho escuro (Cor do texto em secundário) */
-  --color-secondary-container: #ad0224; /* Vermelho escuro (Container secundário) */
-  --color-on-secondary-container: #ffb8b5; /* Rosa salmão claro (Cor do texto em container secundário) */
-
-  /* --- TONS DOURADOS (TERTIARY) --- */
-  --color-tertiary: #e9c349; /* Dourado claro (Cor terciária) */
-  --color-on-tertiary: #3c2f00; /* Dourado escuro (Cor do texto em terciário) */
+  --color-secondary: #ffb3b1;
+  --color-on-secondary: #680011;
+  --color-secondary-container: #ad0224;
 
   /* --- LARANJA --- */
-  --color-orange: #ff9800; /* Laranja vibrante (Cor de destaque) */
+  --color-orange-500: #ff9800;
 
   /* --- FONTES --- */
   --font-headline: var(--font-epilogue), sans-serif;
   --font-body: var(--font-manrope), sans-serif;
+
+  /* Animações */
+  --animate-scan: scan 1.4s ease-in-out infinite;
+  --animate-shimmer: shimmer-text 15s linear infinite;
+  --animate-fade-in: fade-in 0.3s ease-out;
+
+  @keyframes scan {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes shimmer-text {
+    0% {
+      background-position: 50% center;
+    }
+    40% {
+      background-position: -250% center;
+    }
+    100% {
+      background-position: -450% center;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 @layer base {

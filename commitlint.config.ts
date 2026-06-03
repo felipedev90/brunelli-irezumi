@@ -18,6 +18,7 @@ const config: UserConfig = {
         'header',
         'footer',
         'nav',
+        'cta',
         'ui',
         'data',
         'types',

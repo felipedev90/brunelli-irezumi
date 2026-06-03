@@ -51,8 +51,11 @@ export function Lightbox({
     >
       {/* Botão fechar */}
       <button
-        onClick={onClose}
-        className="absolute top-4 right-4 text-white/70 transition-colors hover:text-white"
+        onClick={(e) => {
+          e.stopPropagation()
+          onClose()
+        }}
+        className="absolute top-4 right-4 z-10 text-white/70 transition-colors hover:text-white"
         aria-label="Fechar"
       >
         <span className="text-body cursor-pointer px-1 py-4 text-2xl text-red-600 transition-transform hover:scale-110 hover:text-red-400">

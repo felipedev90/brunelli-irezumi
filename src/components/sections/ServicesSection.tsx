@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { SERVICES } from '@/data/projects'
-import { MoveRight } from 'lucide-react'
 
 export function ServicesSection() {
   return (
@@ -44,10 +43,9 @@ export function ServicesSection() {
                 </p>
                 <Link
                   href={`/servicos/${service.slug}`}
-                  className="font-headline flex items-center gap-2 text-sm font-bold tracking-widest text-orange-500 uppercase transition-transform group-hover:translate-x-2"
+                  className="font-body flex items-center gap-2 text-sm font-bold tracking-widest text-orange-500 uppercase transition-transform group-hover:translate-x-2"
                 >
                   {service.cta}
-                  <MoveRight size={20} aria-hidden="true" />
                 </Link>
               </div>
             </div>

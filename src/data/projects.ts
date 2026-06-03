@@ -38,7 +38,7 @@ export const SERVICES: ServiceCard[] = [
   {
     id: 1,
     slug: 'tradicional',
-    title: 'Desenhos',
+    title: 'Pinturas',
     description: 'Arte original. Feita à mão. ',
     cta: 'Saiba mais',
     image: {
@@ -114,7 +114,7 @@ export const SERVICES: ServiceCard[] = [
     slug: 'coverup',
     title: 'Coberturas',
     description: 'Resgate sua autoestima.',
-    cta: 'Ver transformações',
+    cta: 'Saiba mais',
     image: {
       src: '/images/services/cover1000p.webp',
       alt: 'Antes e depois de uma cobertura de tatuagem mostrando a transformação',

@@ -19,21 +19,27 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://brunelli-irezumi.com.br'),
+  metadataBase: new URL('https://www.brunelli-irezumi.com.br'),
   title: {
-    default: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP | 4.9★',
+    default: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí-SP',
     template: '%s | Brunelli Irezumi',
   },
   description:
     'Especialista em Tatuagem Japonesa Tradicional (Irezumi) e Coberturas de Alta Performance em Jundiaí. Mais de 10 anos de experiência como Modern Shokunin. Agende sua arte única.',
   keywords: [
     'tatuagem japonesa',
+    'tatuagem japonesa em jundiaí',
+    'irezumi jundiaí',
+    'tatuagem japonesa tradicional',
     'irezumi',
     'tatuagem Jundiaí',
     'cover-up tatuagem',
     'tatuador Jundiaí',
     'Brunelli Irezumi',
   ],
+  verification: {
+    google: 'Km5CUONvi2oxSCO3Pjyg3Uf_QoTuKjsWkZDJdDdItvk',
+  },
   alternates: {
     canonical: '/',
   },
@@ -47,11 +53,11 @@ export const metadata: Metadata = {
       'Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.',
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://brunelli-irezumi.com.br',
+    url: 'https://www.brunelli-irezumi.com.br',
     siteName: 'Brunelli Irezumi',
     images: [
       {
-        url: 'https://brunelli-irezumi.com.br/images/hero/hero1900p.webp',
+        url: 'https://www.brunelli-irezumi.com.br/images/hero/hero1900p.webp',
         width: 1900,
         height: 1267,
         alt: 'Brunelli Irezumi — Tatuagem Japonesa Tradicional em Jundiaí-SP',
@@ -71,7 +77,7 @@ const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TattooParlor',
   name: 'Brunelli Irezumi',
-  url: 'https://brunelli-irezumi.com.br',
+  url: 'https://www.brunelli-irezumi.com.br',
   telephone: '+5511976624286',
   address: {
     '@type': 'PostalAddress',

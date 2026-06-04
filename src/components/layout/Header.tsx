@@ -27,7 +27,7 @@ export function Header() {
     <>
       <header className="fixed top-0 z-50 flex w-full items-center justify-between bg-[#131313]/80 px-6 py-4 backdrop-blur-xl">
         <Link
-          href="#hero"
+          href="/#hero"
           className="text-on-surface font-headline text-xl font-black tracking-widest uppercase"
         >
           <span className="text-orange-500">Brunelli </span>Irezumi

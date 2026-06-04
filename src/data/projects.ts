@@ -19,9 +19,9 @@ export const STUDIO_ADDRESS = {
 export const STUDIO_HOURS = 'Segunda a Sábado: 10h às 20h'
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'O Artista', href: '#sobre' },
-  { label: 'Especialidades', href: '#servicos' },
-  { label: 'Galeria', href: '#galeria' },
+  { label: 'O Artista', href: '/#sobre' },
+  { label: 'Especialidades', href: '/#servicos' },
+  { label: 'Galeria', href: '/#galeria' },
 ]
 
 export const HERO_IMG_CONTENT = {

@@ -117,28 +117,38 @@ export const SERVICES: ServiceCard[] = [
     cta: 'Saiba mais',
     image: {
       src: '/images/services/cover1000p.webp',
-      alt: 'Antes e depois de uma cobertura de tatuagem mostrando a transformação',
+      alt: 'Cobertura de tatuagem nas costas feita à mão por Felipe Brunelli',
     },
     gallery: [
       {
         id: 1,
         src: '/images/servicesCoverups/coverup01.webp',
-        alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
+        alt: 'Cobertura de tatuagem nas costas',
       },
       {
         id: 2,
-        src: '/images/servicesCoverups/coverup02.webp',
-        alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
+        src: '/images/servicesCoverups/coverup06.webp',
+        alt: 'Cobertura de tatuagem no peito',
       },
       {
         id: 3,
-        src: '/images/servicesCoverups/coverup03.webp',
-        alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
+        src: '/images/servicesCoverups/coverup02.webp',
+        alt: 'Cobertura de tatuagem nas costas com Hannya',
       },
       {
         id: 4,
+        src: '/images/servicesCoverups/coverup03.webp',
+        alt: 'Cobertura de tatuagem no braço feita à mão por Felipe Brunelli',
+      },
+      {
+        id: 5,
+        src: '/images/servicesCoverups/coverup05.webp',
+        alt: 'Cobertura de tatuagem no peito',
+      },
+      {
+        id: 6,
         src: '/images/servicesCoverups/coverup04.webp',
-        alt: 'Cobertura de tatuagem feita à mão por Felipe Brunelli',
+        alt: 'Cobertura de tatuagem no peito',
       },
     ],
   },

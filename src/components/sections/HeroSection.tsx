@@ -37,8 +37,8 @@ export function HeroSection() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.2}>
-            <p className="text-on-background font-headline mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
-              Respeito a tradição.
+            <p className="text-on-background font-body mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
+              Respeito à tradição.
             </p>
           </RevealOnScroll>
 

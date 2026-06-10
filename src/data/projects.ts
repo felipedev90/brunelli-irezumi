@@ -21,7 +21,7 @@ export const STUDIO_HOURS = 'Segunda a Sábado: 10h às 20h'
 export const NAV_LINKS: NavLink[] = [
   { label: 'O Artista', href: '/#sobre' },
   { label: 'Especialidades', href: '/#servicos' },
-  { label: 'Galeria', href: '/#galeria' },
+  { label: 'Portfólio', href: '/#galeria' },
 ]
 
 export const HERO_IMG_CONTENT = {
@@ -172,10 +172,11 @@ export const ABOUT_IMG = {
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: '/images/gallery/brunelli_portfolio11.webp',
-    alt: 'Backpiece Hannya e a Serpente',
+    src: '/images/gallery/brunelli_portfolio03.webp',
+    alt: 'Backpiece com Raijin e Fujin',
     span: 'none',
   },
+
   {
     id: 2,
     src: '/images/gallery/brunelli_portfolio02.webp',
@@ -184,22 +185,23 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: 3,
+    src: '/images/gallery/brunelli_portfolio17.webp',
+    alt: 'Jorogumo, a mulher-aranha do folclore japonês',
+    span: 'none',
+  },
+  {
+    id: 4,
     src: '/images/gallery/brunelli_portfolio01.webp',
     alt: 'Armpiece com pássaro, sol e flores',
     span: 'none',
   },
   {
-    id: 4,
-    src: '/images/gallery/brunelli_portfolio04.webp',
-    alt: 'Máscaras tradicionais japonesas com serpente',
-    span: 'none',
-  },
-  {
     id: 5,
-    src: '/images/gallery/brunelli_portfolio03.webp',
-    alt: 'Backpiece com Raijin e Fujin',
+    src: '/images/gallery/brunelli_portfolio11.webp',
+    alt: 'Backpiece Hannya e a Serpente',
     span: 'none',
   },
+
   {
     id: 6,
     src: '/images/gallery/brunelli_portfolio05.webp',
@@ -256,10 +258,11 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: 15,
-    src: '/images/gallery/brunelli_portfolio17.webp',
-    alt: 'Jorogumo, a mulher-aranha do folclore japonês',
+    src: '/images/gallery/brunelli_portfolio04.webp',
+    alt: 'Máscaras tradicionais japonesas com serpente',
     span: 'none',
   },
+
   {
     id: 16,
     src: '/images/gallery/brunelli_portfolio18.webp',

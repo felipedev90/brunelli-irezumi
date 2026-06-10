@@ -26,7 +26,7 @@ export function HeroSection() {
       <div className="relative z-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-12">
         <div className="md:col-span-8">
           <RevealOnScroll delay={0.2}>
-            <h1 className="font-headline text-on-surface/90 mb-6 text-[2.9rem] leading-[1.1] font-black tracking-wide uppercase md:text-6xl lg:text-8xl">
+            <h1 className="font-headline text-on-surface/90 lg:text-10 mb-6 text-[2.9rem] leading-[1.1] font-black tracking-wide uppercase md:text-6xl">
               <ShimmerText variant="night" className="block">
                 Tatuagem Japonesa <br />
               </ShimmerText>
@@ -37,8 +37,8 @@ export function HeroSection() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.2}>
-            <p className="text-on-background font-headline mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
-              Respeito a tradição.
+            <p className="text-on-background font-body mt-10 mb-4 max-w-xl text-lg leading-relaxed tracking-wide uppercase md:text-xl">
+              Respeito à tradição.
             </p>
           </RevealOnScroll>
 

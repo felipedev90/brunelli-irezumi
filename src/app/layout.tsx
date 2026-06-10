@@ -25,10 +25,14 @@ export const metadata: Metadata = {
     template: '%s | Brunelli Irezumi',
   },
   description:
-    'Especialista em Tatuagem Japonesa Tradicional (Irezumi) e Coberturas de Alta Performance em Jundiaí. Mais de 10 anos de experiência como Modern Shokunin. Agende sua arte única.',
+    'Especialista em tatuagem tradicional japonesa e coberturas em Jundiaí. Há mais de 10 anos estudando a arte oriental.',
   keywords: [
     'tatuagem japonesa',
     'tatuagem japonesa em jundiaí',
+    'Tattoo japonesa',
+    'Tatuagem oriental',
+    'Tatuagem oriental jundiai',
+    'Oriental tattoo',
     'irezumi jundiaí',
     'tatuagem japonesa tradicional',
     'irezumi',
@@ -36,6 +40,13 @@ export const metadata: Metadata = {
     'cover-up tatuagem',
     'tatuador Jundiaí',
     'Brunelli Irezumi',
+    'Irezumi',
+    'Horimono',
+    'Jundiai tattoo',
+    'Tatuagem Jundiaí',
+    'Tatuagem cobertura',
+    'Cobertura tattoo jundiai',
+    'Cobertura tatuagem Jundiaí',
   ],
   verification: {
     google: 'Km5CUONvi2oxSCO3Pjyg3Uf_QoTuKjsWkZDJdDdItvk',
@@ -50,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí',
     description:
-      'Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.',
+      'Especialista em tatuagem tradicional japonesa e coberturas em Jundiaí. Há mais de 10 anos estudando a arte oriental.',
     type: 'website',
     locale: 'pt_BR',
     url: 'https://www.brunelli-irezumi.com.br',
@@ -68,7 +79,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BRUNELLI IREZUMI | Tatuagem Japonesa em Jundiaí',
     description:
-      'Mais de 10 anos criando obras únicas no corpo. Orçamento sem compromisso.',
+      'Especialista em tatuagem tradicional japonesa e coberturas em Jundiaí. Há mais de 10 anos estudando a arte oriental.',
     images: ['/images/hero/hero1900p.webp'],
   },
 }

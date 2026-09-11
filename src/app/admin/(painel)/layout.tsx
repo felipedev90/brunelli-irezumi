@@ -1,3 +1,5 @@
+import { LogoutButton } from '@/components/admin/LogoutButton'
+
 export default function AdminLayout({
   children,
 }: {
@@ -7,6 +9,7 @@ export default function AdminLayout({
     <>
       <nav>
         <h1>Admin Layout</h1>
+        <LogoutButton />
       </nav>
       <main>{children}</main>
     </>

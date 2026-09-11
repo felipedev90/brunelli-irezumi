@@ -16,15 +16,24 @@ async function main() {
     )
   }
 
+  if (password.length < 12) {
+    throw new Error('ADMIN_PASSWORD precisa ter no mínimo 12 caracteres')
+  }
+
+  const admin = await prisma.adminUser.findUnique({ where: { email } })
+
+  if (admin) {
+    console.log('Admin já existe, nada a fazer:', admin.email)
+    return
+  }
+
   const passwordHash = await bcrypt.hash(password, 10)
 
-  const admin = await prisma.adminUser.upsert({
-    where: { email },
-    update: { passwordHash },
-    create: { email, passwordHash },
+  const created = await prisma.adminUser.create({
+    data: { email, passwordHash },
   })
 
-  console.log('Admin criado/atualizado:', admin.email)
+  console.log('Admin criado:', created.email)
 }
 
 main()

@@ -5,7 +5,10 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, type LoginFormData } from '@/schemas/login'
 
+import { useRouter } from 'next/navigation'
+
 export function LoginForm() {
+  const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
 
   const {
@@ -31,8 +34,7 @@ export function LoginForm() {
       return
     }
 
-    // TODO: redirecionar pra /admin quando o shell existir
-    setServerError(null)
+    router.push('/admin')
   }
 
   return (

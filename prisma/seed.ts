@@ -7,10 +7,10 @@ const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
 const prisma = new PrismaClient({ adapter })
 
 async function main() {
-  const email = process.env.ADMIN_EMAIL
+  const rawEmail = process.env.ADMIN_EMAIL
   const password = process.env.ADMIN_PASSWORD
 
-  if (!email || !password) {
+  if (!rawEmail || !password) {
     throw new Error(
       'ADMIN_EMAIL e ADMIN_PASSWORD precisam estar definidos no .env',
     )
@@ -20,7 +20,11 @@ async function main() {
     throw new Error('ADMIN_PASSWORD precisa ter no mínimo 12 caracteres')
   }
 
-  const admin = await prisma.adminUser.findUnique({ where: { email } })
+  const email = rawEmail.toLowerCase()
+
+  const admin = await prisma.adminUser.findUnique({
+    where: { email },
+  })
 
   if (admin) {
     console.log('Admin já existe, nada a fazer:', admin.email)

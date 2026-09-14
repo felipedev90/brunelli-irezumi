@@ -1,0 +1,41 @@
+import { NextResponse } from 'next/server'
+import { prisma } from '@/lib/prisma'
+import { getPublicUrl } from '@/lib/r2'
+import { galleryImageSchema } from '@/schemas/gallery'
+
+export async function POST(request: Request) {
+  try {
+    const parsed = galleryImageSchema.safeParse(await request.json())
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Chave ou categoria ausente' },
+        { status: 400 },
+      )
+    }
+
+    const lastImg = await prisma.galleryImage.findFirst({
+      where: { category: parsed.data.category },
+      orderBy: { order: 'desc' },
+    })
+
+    const order = lastImg ? lastImg.order + 1 : 1
+
+    const url = getPublicUrl(parsed.data.key)
+
+    const newImage = await prisma.galleryImage.create({
+      data: {
+        url,
+        category: parsed.data.category,
+        order,
+      },
+    })
+    return NextResponse.json(newImage, { status: 201 })
+  } catch (error) {
+    console.error('Erro ao criar imagem da galeria:', error)
+    return NextResponse.json(
+      { error: 'Erro ao criar imagem da galeria' },
+      { status: 500 },
+    )
+  }
+}

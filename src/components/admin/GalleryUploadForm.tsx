@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { compressImage } from '@/lib/compress-image'
 import { useRouter } from 'next/navigation'
 
-export default function GalleryUploadForm() {
+export function GalleryUploadForm() {
   const router = useRouter()
   const [uploading, setUploading] = useState(false)
   const [category, setCategory] = useState<

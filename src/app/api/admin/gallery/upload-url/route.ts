@@ -19,6 +19,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ uploadUrl, key })
   } catch (error) {
     console.error('Erro ao gerar upload URL:', error)
+
     return NextResponse.json(
       { error: 'Erro ao gerar URL de upload' },
       { status: 500 },

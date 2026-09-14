@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma'
 import Image from 'next/image'
 import GalleryUploadForm from '@/components/admin/GalleryUploadForm'
+import { DeleteGalleryImageButton } from '@/components/admin/DeleteGalleryImageButton'
 
 export default async function GaleriaPage() {
   const images = await prisma.galleryImage.findMany({
@@ -22,6 +23,7 @@ export default async function GaleriaPage() {
               width={500}
               height={500}
             />
+            <DeleteGalleryImageButton id={image.id} />
           </div>
         ))
       )}

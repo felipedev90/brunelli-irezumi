@@ -25,12 +25,12 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 flex w-full items-center justify-between bg-[#131313]/80 px-6 py-4 backdrop-blur-xl">
+      <header className="bg-surface/80 fixed top-0 z-50 flex w-full items-center justify-between px-6 py-4 backdrop-blur-xl">
         <Link
           href="/#hero"
           className="text-on-surface font-headline text-xl font-black tracking-widest uppercase"
         >
-          <span className="text-orange-500">Brunelli </span>Irezumi
+          <span className="text-accent">Brunelli </span>Irezumi
         </Link>
 
         {/* Desktop Nav */}
@@ -42,7 +42,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-headline text-on-surface hover:text-secondary font-bold tracking-wide uppercase transition-colors duration-300"
+              className="font-headline text-on-surface hover:text-secondary-container font-bold tracking-wide uppercase transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="text-on-surface font-headline bg-orange-500/90 px-6 py-2 text-sm font-bold tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
+            className="text-on-surface font-headline bg-accent/90 px-6 py-2 text-sm font-bold tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
           >
             Agendamento
           </Link>
@@ -60,7 +60,7 @@ export function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="text-orange-500 lg:hidden"
+          className="text-accent lg:hidden"
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -82,7 +82,7 @@ export function Header() {
         aria-modal="true"
         aria-label="Menu de navegação"
         aria-hidden={!isOpen}
-        className={`bg-background fixed inset-0 z-40 transition-transform duration-300 lg:hidden ${
+        className={`bg-surface fixed inset-0 z-40 transition-transform duration-300 lg:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

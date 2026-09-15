@@ -8,7 +8,7 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
+            <span className="font-headline text-accent text-sm font-bold tracking-[0.3em] uppercase">
               Especialidades
             </span>
             <h2 className="font-headline mt-2 text-4xl font-black tracking-wide uppercase md:text-6xl">
@@ -43,7 +43,7 @@ export function ServicesSection() {
                 </p>
                 <Link
                   href={`/servicos/${service.slug}`}
-                  className="font-body flex items-center gap-2 text-sm font-bold tracking-widest text-orange-500 uppercase transition-transform group-hover:translate-x-2"
+                  className="font-body text-accent flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-transform group-hover:translate-x-2"
                 >
                   {service.cta}
                 </Link>

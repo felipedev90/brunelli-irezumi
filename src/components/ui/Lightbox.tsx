@@ -73,7 +73,7 @@ export function Lightbox({
           className="absolute top-1/2 left-2 z-10 -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-white md:left-4"
           aria-label="Imagem anterior"
         >
-          <span className="text-4xl text-orange-500 md:text-7xl">{'<'}</span>
+          <span className="text-accent text-4xl md:text-7xl">{'<'}</span>
         </button>
       )}
 
@@ -102,7 +102,7 @@ export function Lightbox({
           className="absolute top-1/2 right-2 z-10 -translate-y-1/2 p-2 text-white/70 transition-colors hover:text-white md:right-4"
           aria-label="Próxima imagem"
         >
-          <span className="text-4xl text-orange-500 md:text-7xl">{'>'}</span>
+          <span className="text-accent text-4xl md:text-7xl">{'>'}</span>
         </button>
       )}
 

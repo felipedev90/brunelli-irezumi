@@ -19,7 +19,7 @@ export function LocationSection() {
             <div className="flex flex-col space-y-8">
               <div className="flex gap-4">
                 <MapPinned
-                  className="shrink-0 text-orange-500"
+                  className="text-accent shrink-0"
                   aria-hidden="true"
                 />
                 <div>
@@ -36,10 +36,7 @@ export function LocationSection() {
               </div>
 
               <div className="flex gap-4">
-                <Clock
-                  className="shrink-0 text-orange-500"
-                  aria-hidden="true"
-                />
+                <Clock className="text-accent shrink-0" aria-hidden="true" />
                 <div>
                   <p className="text-on-surface font-bold">
                     Horário de Atendimento
@@ -52,7 +49,7 @@ export function LocationSection() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-headline hover:text-on-surface inline-block border border-orange-500 px-8 py-4 text-center text-sm font-bold text-orange-500 uppercase transition-all hover:bg-orange-500/10"
+                className="font-headline hover:text-on-surface border-accent text-accent hover:bg-accent/10 inline-block border px-8 py-4 text-center text-sm font-bold uppercase transition-all"
               >
                 Como Chegar
               </Link>

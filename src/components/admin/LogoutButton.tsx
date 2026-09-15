@@ -15,7 +15,7 @@ export function LogoutButton() {
 
   return (
     <button onClick={handleLogout} aria-label="Sair">
-      <LogOut />
+      <LogOut size={18} />
     </button>
   )
 }

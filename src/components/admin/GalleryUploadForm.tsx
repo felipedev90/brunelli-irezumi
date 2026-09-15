@@ -9,6 +9,7 @@ export function GalleryUploadForm({ category }: { category: GalleryCategory }) {
   const router = useRouter()
   const [uploading, setUploading] = useState(false)
   const [file, setFile] = useState<File | null>(null)
+  const [inputKey, setInputKey] = useState(0)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selected = event.target.files?.[0]
@@ -51,6 +52,8 @@ export function GalleryUploadForm({ category }: { category: GalleryCategory }) {
       }
       console.log('Imagem da galeria criada com sucesso:', key)
       router.refresh()
+      setFile(null)
+      setInputKey((prev) => prev + 1)
     } catch (error) {
       console.error('Erro ao comprimir ou enviar imagem:', error)
     } finally {
@@ -59,19 +62,27 @@ export function GalleryUploadForm({ category }: { category: GalleryCategory }) {
   }
 
   return (
-    <form>
+    <form className="border-outline-variant bg-surface-container flex flex-col gap-2 rounded-sm border p-3 sm:flex-row sm:items-center">
       <input
+        key={inputKey}
         type="file"
         accept="image/*"
         onChange={handleFileChange}
         disabled={uploading}
+        className="text-on-surface-variant file:bg-surface-container-high file:text-on-surface flex-1 text-sm file:mr-3 file:rounded-sm file:border-0 file:px-3 file:py-1.5 file:text-sm"
       />
-      {uploading && <p>Enviando...</p>}
+
+      {uploading && (
+        <p className="text-on-surface-variant animate-pulse text-center text-sm">
+          Enviando...
+        </p>
+      )}
 
       <button
         type="button"
         onClick={handleUpload}
         disabled={!file || uploading}
+        className="border-accent text-accent rounded-sm border px-4 py-1.5 text-sm font-medium transition-opacity disabled:opacity-50"
       >
         Enviar
       </button>

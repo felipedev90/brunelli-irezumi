@@ -26,7 +26,7 @@ export function GallerySection() {
         <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div className="bg-outline-variant/20 mx-8 hidden h-0.5 flex-1 lg:block" />
           <div>
-            <span className="font-headline text-sm font-bold tracking-[0.3em] text-orange-500 uppercase">
+            <span className="font-headline text-accent text-sm font-bold tracking-[0.3em] uppercase">
               By Felipe Brunelli
             </span>
             <h2 className="font-headline mt-2 text-4xl font-black tracking-wide uppercase md:text-6xl">
@@ -44,8 +44,8 @@ export function GallerySection() {
             rel="noopener noreferrer"
             className="text-on-surface font-headline inline-flex items-center gap-2 text-lg font-bold tracking-widest uppercase"
           >
-            Ver mais no <span className="text-orange-500">Instagram</span>
-            <InstagramIcon className="mb-1 h-5 w-5 text-orange-500" />
+            Ver mais no <span className="text-accent">Instagram</span>
+            <InstagramIcon className="text-accent mb-1 h-5 w-5" />
           </Link>
         </div>
       </div>

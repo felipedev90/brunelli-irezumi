@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
             />
             <div className="from-surface absolute inset-0 bg-linear-to-t via-transparent to-transparent" />
             <div className="absolute bottom-0 flex w-full items-center justify-center p-8">
-              <h1 className="font-headline border-b border-orange-500/60 text-4xl font-black tracking-widest uppercase md:text-7xl">
+              <h1 className="font-headline border-accent/60 border-b text-4xl font-black tracking-widest uppercase md:text-7xl">
                 {service.title}
               </h1>
             </div>
@@ -77,7 +77,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="border-outline-variant/20 mt-16 flex flex-col justify-between gap-6 border-t pt-12 sm:flex-row md:items-center">
             <Link
               href="/#servicos"
-              className="font-headline hover:text-secondary text-sm tracking-widest text-orange-500 uppercase transition-colors"
+              className="font-headline hover:text-secondary text-accent text-sm tracking-widest uppercase transition-colors"
             >
               ← Voltar
             </Link>
@@ -85,7 +85,7 @@ export default async function ServicePage({ params }: Props) {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-headline text-primary gap-3 border border-orange-500/80 px-8 py-5 text-center text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
+              className="font-headline text-primary border-accent/80 gap-3 border px-8 py-5 text-center text-lg font-black tracking-widest uppercase transition-all hover:scale-105 active:scale-95"
             >
               Solicitar Orçamento
             </Link>

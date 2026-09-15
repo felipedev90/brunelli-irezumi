@@ -3,13 +3,11 @@
 import { useState } from 'react'
 import { compressImage } from '@/lib/compress-image'
 import { useRouter } from 'next/navigation'
+import type { GalleryCategory } from '../../generated/prisma/client'
 
-export function GalleryUploadForm() {
+export function GalleryUploadForm({ category }: { category: GalleryCategory }) {
   const router = useRouter()
   const [uploading, setUploading] = useState(false)
-  const [category, setCategory] = useState<
-    'PORTFOLIO' | 'PAINTING' | 'COVERUP'
-  >('PORTFOLIO')
   const [file, setFile] = useState<File | null>(null)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,18 +66,7 @@ export function GalleryUploadForm() {
         onChange={handleFileChange}
         disabled={uploading}
       />
-      <select
-        value={category}
-        onChange={(e) =>
-          setCategory(e.target.value as 'PORTFOLIO' | 'PAINTING' | 'COVERUP')
-        }
-        disabled={uploading}
-      >
-        <option value="PORTFOLIO">Portfólio</option>
-        <option value="PAINTING">Pintura</option>
-        <option value="COVERUP">Cobertura</option>
-      </select>
-      {uploading && <p>Carregando...</p>}
+      {uploading && <p>Enviando...</p>}
 
       <button
         type="button"

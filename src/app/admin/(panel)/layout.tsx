@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { LogoutButton } from '@/components/admin/LogoutButton'
 
 export default function AdminLayout({
@@ -9,6 +10,9 @@ export default function AdminLayout({
     <>
       <nav>
         <h1>Admin Layout</h1>
+        <Link href="/admin/gallery/portfolio">Portfólio</Link>
+        <Link href="/admin/gallery/painting">Pintura</Link>
+        <Link href="/admin/gallery/coverup">Cobertura</Link>
         <LogoutButton />
       </nav>
       <main>{children}</main>

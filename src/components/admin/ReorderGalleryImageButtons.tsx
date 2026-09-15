@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import { ArrowUp, ArrowDown } from 'lucide-react'
+import { ArrowUp, ArrowDown, ChevronsUp, ChevronsDown } from 'lucide-react'
 
 type ReorderGalleryImageButtonsProps = {
   id: string
@@ -15,7 +15,7 @@ export function ReorderGalleryImageButtons({
 }: ReorderGalleryImageButtonsProps) {
   const router = useRouter()
 
-  const handleReorder = async (direction: 'up' | 'down') => {
+  const handleReorder = async (direction: 'up' | 'down' | 'start' | 'end') => {
     try {
       const response = await fetch(`/api/admin/gallery/${id}/reorder`, {
         method: 'POST',
@@ -37,20 +37,38 @@ export function ReorderGalleryImageButtons({
 
   return (
     <div>
-      <button
-        onClick={() => handleReorder('up')}
-        disabled={isFirst}
-        aria-label="Mover para cima"
-      >
-        <ArrowUp />
-      </button>
-      <button
-        onClick={() => handleReorder('down')}
-        disabled={isLast}
-        aria-label="Mover para baixo"
-      >
-        <ArrowDown />
-      </button>
+      {!isFirst && (
+        <>
+          <button
+            onClick={() => handleReorder('start')}
+            aria-label="Mover para o início"
+          >
+            <ChevronsUp />
+          </button>
+          <button
+            onClick={() => handleReorder('up')}
+            aria-label="Mover para cima"
+          >
+            <ArrowUp />
+          </button>
+        </>
+      )}
+      {!isLast && (
+        <>
+          <button
+            onClick={() => handleReorder('down')}
+            aria-label="Mover para baixo"
+          >
+            <ArrowDown />
+          </button>
+          <button
+            onClick={() => handleReorder('end')}
+            aria-label="Mover para o fim"
+          >
+            <ChevronsDown />
+          </button>
+        </>
+      )}
     </div>
   )
 }

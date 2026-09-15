@@ -1,0 +1,28 @@
+import { NextResponse } from 'next/server'
+import { getUploadUrl } from '@/lib/r2'
+import { randomUUID } from 'crypto'
+
+export async function POST(request: Request) {
+  try {
+    const { contentType } = await request.json()
+    if (!contentType || !contentType.startsWith('image/')) {
+      return NextResponse.json(
+        { error: 'Tipo de conteúdo inválido' },
+        { status: 400 },
+      )
+    }
+
+    const key = `gallery/${randomUUID()}.webp`
+
+    const uploadUrl = await getUploadUrl(key, contentType)
+
+    return NextResponse.json({ uploadUrl, key })
+  } catch (error) {
+    console.error('Erro ao gerar upload URL:', error)
+
+    return NextResponse.json(
+      { error: 'Erro ao gerar URL de upload' },
+      { status: 500 },
+    )
+  }
+}

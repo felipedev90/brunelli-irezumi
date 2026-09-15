@@ -36,36 +36,40 @@ export function ReorderGalleryImageButtons({
   }
 
   return (
-    <div>
+    <div className="flex items-center gap-2">
       {!isFirst && (
-        <>
+        <div className="flex items-center justify-center gap-2">
           <button
             onClick={() => handleReorder('start')}
             aria-label="Mover para o início"
+            className="text-on-surface hover:text-accent"
           >
-            <ChevronsUp />
+            <ChevronsUp size={18} />
           </button>
           <button
             onClick={() => handleReorder('up')}
             aria-label="Mover para cima"
+            className="text-on-surface hover:text-accent"
           >
-            <ArrowUp />
+            <ArrowUp size={18} />
           </button>
-        </>
+        </div>
       )}
       {!isLast && (
         <>
           <button
             onClick={() => handleReorder('down')}
             aria-label="Mover para baixo"
+            className="text-on-surface hover:text-accent"
           >
-            <ArrowDown />
+            <ArrowDown size={18} />
           </button>
           <button
             onClick={() => handleReorder('end')}
             aria-label="Mover para o fim"
+            className="text-on-surface hover:text-accent"
           >
-            <ChevronsDown />
+            <ChevronsDown size={18} />
           </button>
         </>
       )}

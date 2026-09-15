@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { LogoutButton } from '@/components/admin/LogoutButton'
+import { AdminNav } from '@/components/admin/AdminNav'
 
 export default function AdminLayout({
   children,
@@ -14,28 +14,7 @@ export default function AdminLayout({
         </p>
         <LogoutButton />
       </header>
-
-      <nav className="border-outline-variant bg-surface-container flex items-center justify-between gap-4 border-b px-4 py-2 lg:justify-center lg:gap-20">
-        <Link
-          href="/admin/gallery/portfolio"
-          className="text-on-surface-variant hover:text-accent text-sm"
-        >
-          Portfólio
-        </Link>
-        <Link
-          href="/admin/gallery/painting"
-          className="text-on-surface-variant hover:text-accent text-sm"
-        >
-          Pinturas
-        </Link>
-        <Link
-          href="/admin/gallery/coverup"
-          className="text-on-surface-variant hover:text-accent text-sm"
-        >
-          Coberturas
-        </Link>
-      </nav>
-
+      <AdminNav />
       <main className="px-4 py-6">{children}</main>
     </div>
   )

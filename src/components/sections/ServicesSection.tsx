@@ -32,13 +32,13 @@ export function ServicesSection() {
                 className="object-cover opacity-40 transition-transform duration-700 group-hover:scale-105 md:opacity-50"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#131313] via-transparent to-transparent" />
+              <div className="from-surface absolute inset-0 bg-linear-to-t via-transparent to-transparent" />
 
               <div className="absolute bottom-0 p-4">
-                <h3 className="font-headline text-2xl font-bold tracking-wide uppercase md:text-3xl">
+                <h3 className="font-headline text-2xl font-bold tracking-wider uppercase md:text-3xl">
                   {service.title}
                 </h3>
-                <p className="text-on-surface/70 font-body md:text-on-surface-variant mb-6 max-w-sm">
+                <p className="text-on-surface/70 font-body md:text-on-surface-variant mb-6 max-w-sm tracking-wider">
                   {service.description}
                 </p>
                 <Link

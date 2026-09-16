@@ -6,9 +6,16 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import type { Metadata } from 'next'
 import { GalleryGrid } from '@/components/ui/GalleryGrid'
+import { getGalleryImages } from '@/lib/gallery'
+import type { GalleryCategory } from '@/generated/prisma/client'
 
 type Props = {
   params: Promise<{ slug: string }>
+}
+
+const SLUG_TO_CATEGORY: Record<string, GalleryCategory> = {
+  tradicional: 'PAINTING',
+  coverup: 'COVERUP',
 }
 
 export async function generateStaticParams() {
@@ -43,6 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params
   const service = SERVICES.find((s) => s.slug === slug)
+  const category = SLUG_TO_CATEGORY[slug]
+  const images = category ? await getGalleryImages(category) : []
 
   if (!service) notFound()
 
@@ -71,7 +80,7 @@ export default async function ServicePage({ params }: Props) {
           </div>
 
           {/* Grid de imagens */}
-          <GalleryGrid images={service.gallery} />
+          <GalleryGrid images={images} />
 
           {/* CTA */}
           <div className="border-outline-variant/20 mt-16 flex flex-col justify-between gap-6 border-t pt-12 sm:flex-row md:items-center">

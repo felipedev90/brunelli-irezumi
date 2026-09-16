@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { getPublicUrl } from '@/lib/r2'
 import { galleryImageSchema } from '@/schemas/gallery'
+import { revalidateTag } from 'next/cache'
 
 export async function POST(request: Request) {
   try {
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
         order,
       },
     })
+    revalidateTag('gallery', { expire: 0 })
     return NextResponse.json(newImage, { status: 201 })
   } catch (error) {
     console.error('Erro ao criar imagem da galeria:', error)

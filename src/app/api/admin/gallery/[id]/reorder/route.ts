@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { revalidateTag } from 'next/cache'
 
 export async function POST(
   request: Request,
@@ -50,6 +51,7 @@ export async function POST(
         }),
       ])
 
+      revalidateTag('gallery', { expire: 0 })
       return NextResponse.json({ success: true })
     }
 
@@ -64,7 +66,7 @@ export async function POST(
           data: { order: 1 },
         }),
       ])
-
+      revalidateTag('gallery', { expire: 0 })
       return NextResponse.json({ success: true })
     }
 
@@ -84,7 +86,7 @@ export async function POST(
           data: { order: last!.order },
         }),
       ])
-
+      revalidateTag('gallery', { expire: 0 })
       return NextResponse.json({ success: true })
     }
 

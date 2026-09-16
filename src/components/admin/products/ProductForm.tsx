@@ -31,6 +31,7 @@ export function ProductForm() {
     register,
     control,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<CreateProductData>({
     resolver: zodResolver(createProductSchema),
@@ -51,6 +52,7 @@ export function ProductForm() {
     }
 
     router.refresh()
+    reset()
   }
 
   return (
@@ -97,6 +99,11 @@ export function ProductForm() {
       </div>
 
       <CurrencyInput name="priceCents" control={control} label="Preço" />
+      <CurrencyInput
+        name="promoPriceCents"
+        control={control}
+        label="Preço promocional (opcional)"
+      />
 
       <div className="flex flex-col gap-1">
         <label htmlFor="category" className="text-on-surface-variant text-sm">

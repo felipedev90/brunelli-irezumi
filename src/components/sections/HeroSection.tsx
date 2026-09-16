@@ -12,7 +12,7 @@ export function HeroSection() {
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 z-10 bg-linear-to-l from-transparent via-[#131313]/60 to-[#131313]" />
+        <div className="via-surface/60 to-surface absolute inset-0 z-10 bg-linear-to-l from-transparent" />
         <Image
           src={HERO_IMG_CONTENT.src}
           alt={HERO_IMG_CONTENT.alt}

@@ -6,6 +6,7 @@ import { createProductSchema, type CreateProductData } from '@/schemas/product'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { CurrencyInput } from '@/components/ui/CurrencyInput'
+import { compressImage } from '@/lib/compress-image'
 
 const CATEGORY_LABELS: Record<string, string> = {
   DRAWING: 'Desenho',
@@ -26,6 +27,7 @@ const TAG_LABELS: Record<string, string> = {
 export function ProductForm() {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
+  const [files, setFiles] = useState<File[]>([])
 
   const {
     register,
@@ -51,6 +53,32 @@ export function ProductForm() {
       return
     }
 
+    const product = await res.json()
+
+    for (const file of files) {
+      const compressedImage = await compressImage(file)
+
+      const urlResponse = await fetch('/api/admin/products/upload-url', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ contentType: 'image/webp' }),
+      })
+
+      const { uploadUrl, key } = await urlResponse.json()
+
+      await fetch(uploadUrl, {
+        method: 'PUT',
+        headers: { 'content-type': 'image/webp' },
+        body: compressedImage,
+      })
+
+      await fetch(`/api/admin/products/${product.id}/images`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ key }),
+      })
+    }
+
     router.refresh()
     reset()
   }
@@ -72,7 +100,7 @@ export function ProductForm() {
           className="border-outline-variant bg-surface-container text-on-surface rounded-sm border px-3 py-2 text-sm"
         />
         {errors.title && (
-          <p role="alert" className="text-secondary-container text-xs">
+          <p role="alert" className="text-secondary-container text-sm">
             {errors.title.message}
           </p>
         )}
@@ -92,7 +120,7 @@ export function ProductForm() {
           className="border-outline-variant bg-surface-container text-on-surface rounded-sm border px-3 py-2 text-sm"
         />
         {errors.description && (
-          <p role="alert" className="text-secondary-container text-xs">
+          <p role="alert" className="text-secondary-container text-sm">
             {errors.description.message}
           </p>
         )}
@@ -122,7 +150,7 @@ export function ProductForm() {
           ))}
         </select>
         {errors.category && (
-          <p role="alert" className="text-secondary-container text-xs">
+          <p role="alert" className="text-secondary-container text-sm">
             {errors.category.message}
           </p>
         )}
@@ -146,6 +174,20 @@ export function ProductForm() {
           {serverError}
         </p>
       )}
+
+      <div className="flex flex-col gap-1">
+        <label htmlFor="images" className="text-on-surface-variant text-sm">
+          Imagens
+        </label>
+        <input
+          id="images"
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={(e) => setFiles(Array.from(e.target.files ?? []))}
+          className="text-on-surface-variant file:bg-surface-container-high file:text-on-surface flex-1 text-sm file:mr-3 file:rounded-sm file:border-0 file:px-3 file:py-1.5 file:text-sm"
+        />
+      </div>
 
       <button
         type="submit"

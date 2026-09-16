@@ -48,7 +48,7 @@ export function CurrencyInput<T extends FieldValues>({
             className="border-outline-variant bg-surface-container text-on-surface focus-visible:outline-accent rounded-sm border px-3 py-2 text-sm focus-visible:outline"
           />
           {fieldState.error && (
-            <p role="alert" className="text-secondary-container text-xs">
+            <p role="alert" className="text-secondary-container text-sm">
               {fieldState.error.message}
             </p>
           )}

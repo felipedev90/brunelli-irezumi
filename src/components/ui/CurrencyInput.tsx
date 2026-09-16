@@ -6,6 +6,7 @@ import {
   type FieldValues,
   type Path,
 } from 'react-hook-form'
+import { formatCentsToBRL } from '@/lib/format-currency'
 
 type CurrencyInputProps<T extends FieldValues> = {
   name: Path<T>
@@ -15,10 +16,7 @@ type CurrencyInputProps<T extends FieldValues> = {
 
 function formatCents(cents: number | undefined): string {
   if (!cents) return ''
-  return (cents / 100).toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  })
+  return formatCentsToBRL(cents)
 }
 
 export function CurrencyInput<T extends FieldValues>({

@@ -3,6 +3,7 @@ import { ProductForm } from '@/components/admin/products/ProductForm'
 import { prisma } from '@/lib/prisma'
 import Image from 'next/image'
 import { formatCentsToBRL } from '@/lib/format-currency'
+import { DeleteProductButton } from '@/components/admin/products/DeleteProductButton'
 
 export const metadata: Metadata = {
   title: 'Produtos',
@@ -59,6 +60,9 @@ export default async function ProductsPage() {
                 <span className="text-on-surface-variant text-sm">
                   {formatCentsToBRL(product.priceCents)}
                 </span>
+              </div>
+              <div className="mt-2 flex w-full justify-end">
+                <DeleteProductButton id={product.id} />
               </div>
             </div>
           ))}

@@ -33,3 +33,6 @@ export const createProductSchema = z
   )
 
 export type CreateProductData = z.input<typeof createProductSchema>
+
+export const updateProductSchema = createProductSchema.partial()
+export type UpdateProductData = z.input<typeof updateProductSchema>

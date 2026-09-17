@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { deleteObject } from '@/lib/r2'
+import { updateProductSchema } from '@/schemas/product'
 
 export async function DELETE(
   _request: Request,
@@ -37,6 +38,45 @@ export async function DELETE(
     console.error('Erro ao excluir produto', error)
     return NextResponse.json(
       { error: 'Erro ao excluir produto' },
+      { status: 500 },
+    )
+  }
+}
+
+export async function PATCH(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  try {
+    const { id } = await params
+    const body = await request.json()
+    const parsed = updateProductSchema.safeParse(body)
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Dados do produto inválidos' },
+        { status: 400 },
+      )
+    }
+
+    const { tags, ...rest } = parsed.data
+
+    const updatedProduct = await prisma.product.update({
+      where: { id },
+      data: {
+        ...rest,
+        ...(tags && { tags: { set: tags } }),
+      },
+    })
+
+    return NextResponse.json(
+      { message: 'Produto atualizado com sucesso', product: updatedProduct },
+      { status: 200 },
+    )
+  } catch (error) {
+    console.error('Erro ao atualizar produto', error)
+    return NextResponse.json(
+      { error: 'Erro ao atualizar produto' },
       { status: 500 },
     )
   }

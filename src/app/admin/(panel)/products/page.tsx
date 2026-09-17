@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { ProductForm } from '@/components/admin/products/ProductForm'
 import { prisma } from '@/lib/prisma'
 import Image from 'next/image'
 import { formatCentsToBRL } from '@/lib/format-currency'
 import { DeleteProductButton } from '@/components/admin/products/DeleteProductButton'
+import { Pencil } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Produtos',
@@ -61,7 +63,14 @@ export default async function ProductsPage() {
                   {formatCentsToBRL(product.priceCents)}
                 </span>
               </div>
-              <div className="mt-2 flex w-full justify-end">
+              <div className="mt-2 flex w-full justify-end gap-4">
+                <Link
+                  href={`/admin/products/${product.id}/edit`}
+                  aria-label="Editar produto"
+                  className="text-on-surface hover:text-accent"
+                >
+                  <Pencil size={16} />
+                </Link>
                 <DeleteProductButton id={product.id} />
               </div>
             </div>

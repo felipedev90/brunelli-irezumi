@@ -24,7 +24,19 @@ const TAG_LABELS: Record<string, string> = {
   ON_SALE: 'Promoção',
 }
 
-export function ProductForm() {
+type ProductFormProps = {
+  product?: {
+    id: string
+    title: string
+    description: string
+    priceCents: number
+    promoPriceCents: number | null
+    category: CreateProductData['category']
+    tags: CreateProductData['tags']
+  }
+}
+
+export function ProductForm({ product }: ProductFormProps) {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
   const [files, setFiles] = useState<File[]>([])
@@ -37,13 +49,29 @@ export function ProductForm() {
     formState: { errors, isSubmitting },
   } = useForm<CreateProductData>({
     resolver: zodResolver(createProductSchema),
+    defaultValues: product
+      ? {
+          title: product.title,
+          description: product.description,
+          priceCents: product.priceCents,
+          promoPriceCents: product.promoPriceCents ?? undefined,
+          category: product.category,
+          tags: product.tags,
+        }
+      : undefined,
   })
 
   async function onSubmit(data: CreateProductData) {
     setServerError(null)
 
-    const res = await fetch('/api/admin/products', {
-      method: 'POST',
+    const url = product
+      ? `/api/admin/products/${product.id}`
+      : '/api/admin/products'
+
+    const method = product ? 'PATCH' : 'POST'
+
+    const res = await fetch(url, {
+      method,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
@@ -53,7 +81,7 @@ export function ProductForm() {
       return
     }
 
-    const product = await res.json()
+    const productId = product ? product.id : (await res.json()).id
 
     for (const file of files) {
       const compressedImage = await compressImage(file)
@@ -72,7 +100,7 @@ export function ProductForm() {
         body: compressedImage,
       })
 
-      await fetch(`/api/admin/products/${product.id}/images`, {
+      await fetch(`/api/admin/products/${productId}/images`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ key }),
@@ -194,7 +222,11 @@ export function ProductForm() {
         disabled={isSubmitting}
         className="border-accent text-accent cursor-pointer rounded-sm border px-4 py-1.5 text-sm font-medium disabled:opacity-50"
       >
-        {isSubmitting ? 'Salvando...' : 'Criar produto'}
+        {isSubmitting
+          ? 'Salvando...'
+          : product
+            ? 'Atualizar produto'
+            : 'Criar produto'}
       </button>
     </form>
   )

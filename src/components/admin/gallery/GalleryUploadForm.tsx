@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { compressImage } from '@/lib/compress-image'
 import { useRouter } from 'next/navigation'
-import type { GalleryCategory } from '../../generated/prisma/client'
+import type { GalleryCategory } from '@/generated/prisma/client'
 
 export function GalleryUploadForm({ category }: { category: GalleryCategory }) {
   const router = useRouter()

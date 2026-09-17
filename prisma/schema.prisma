@@ -7,6 +7,28 @@ datasource db {
     provider = "postgresql"
 }
 
+enum ProductTag {
+    MADE_TO_ORDER
+    LIMITED
+    SOLD_OUT
+    ON_SALE
+}
+
+enum GalleryCategory {
+    PORTFOLIO
+    PAINTING
+    COVERUP
+}
+
+enum ProductCategory {
+    DRAWING
+    PRINT
+    TENUGUI
+    SOCKS
+    ECOBAG
+    CUSTOM
+}
+
 model AdminUser {
     id           String   @id @default(cuid())
     email        String   @unique
@@ -17,19 +39,13 @@ model AdminUser {
     updatedAt    DateTime @updatedAt 
 }
 
-enum ProductTag {
-    SOB_ENCOMENDA
-    ACABA_RAPIDO
-    ESGOTADO
-    PROMOCAO
-}
-
 model Product {
     id              String        @id @default(cuid())
     title           String
     description     String
     priceCents      Int
     promoPriceCents Int?
+    category        ProductCategory
     tags            ProductTag[]
     active          Boolean       @default(true)
     images          ProductImage[]
@@ -43,12 +59,6 @@ model ProductImage {
     order     Int
     product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
     productId String
-}
-
-enum GalleryCategory {
-    PORTFOLIO
-    PAINTING
-    COVERUP
 }
 
 model GalleryImage {

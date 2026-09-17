@@ -1,10 +1,10 @@
 import { prisma } from '@/lib/prisma'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { GalleryUploadForm } from '@/components/admin/GalleryUploadForm'
-import { DeleteGalleryImageButton } from '@/components/admin/DeleteGalleryImageButton'
-import { ReorderGalleryImageButtons } from '@/components/admin/ReorderGalleryImageButtons'
-import type { GalleryCategory } from '../../../../../generated/prisma/client'
+import { GalleryUploadForm } from '@/components/admin/gallery/GalleryUploadForm'
+import { DeleteGalleryImageButton } from '@/components/admin/gallery/DeleteGalleryImageButton'
+import { ReorderGalleryImageButtons } from '@/components/admin/gallery/ReorderGalleryImageButtons'
+import type { GalleryCategory } from '@/generated/prisma/client'
 
 const CATEGORY_MAP: Record<string, GalleryCategory> = {
   portfolio: 'PORTFOLIO',
@@ -14,8 +14,8 @@ const CATEGORY_MAP: Record<string, GalleryCategory> = {
 
 const CATEGORY_LABELS: Record<GalleryCategory, string> = {
   PORTFOLIO: 'Portfólio',
-  PAINTING: 'Pintura',
-  COVERUP: 'Cobertura',
+  PAINTING: 'Pinturas',
+  COVERUP: 'Coberturas',
 }
 
 type Props = {

@@ -1,5 +1,5 @@
-import { LogoutButton } from '@/components/admin/LogoutButton'
-import { AdminNav } from '@/components/admin/AdminNav'
+import { LogoutButton } from '@/components/admin/auth/LogoutButton'
+import { AdminNav } from '@/components/admin/layout/AdminNav'
 
 export default function AdminLayout({
   children,

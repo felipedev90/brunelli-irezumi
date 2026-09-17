@@ -26,6 +26,12 @@ export function AdminNav() {
       >
         Coberturas
       </Link>
+      <Link
+        href="/admin/products"
+        className={`text-sm ${pathname === '/admin/products' ? 'text-accent' : 'text-on-surface-variant hover:text-accent'}`}
+      >
+        Loja
+      </Link>
     </nav>
   )
 }

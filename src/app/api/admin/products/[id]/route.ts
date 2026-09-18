@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { deleteObject } from '@/lib/r2'
 import { updateProductSchema } from '@/schemas/product'
+import { revalidateTag } from 'next/cache'
 
 export async function DELETE(
   _request: Request,
@@ -30,6 +31,8 @@ export async function DELETE(
     await prisma.product.delete({
       where: { id: id },
     })
+
+    revalidateTag('products', { expire: 0 })
     return NextResponse.json(
       { message: 'Produto excluído com sucesso' },
       { status: 200 },
@@ -69,6 +72,7 @@ export async function PATCH(
       },
     })
 
+    revalidateTag('products', { expire: 0 })
     return NextResponse.json(
       { message: 'Produto atualizado com sucesso', product: updatedProduct },
       { status: 200 },

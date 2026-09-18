@@ -1,6 +1,7 @@
 import { createProductSchema } from '@/schemas/product'
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { revalidateTag } from 'next/cache'
 
 export async function POST(request: Request) {
   try {
@@ -24,6 +25,7 @@ export async function POST(request: Request) {
         tags: { set: parsed.data.tags },
       },
     })
+    revalidateTag('products', { expire: 0 })
     return NextResponse.json(product, { status: 201 })
   } catch (error) {
     console.error('Erro ao criar produto', error)

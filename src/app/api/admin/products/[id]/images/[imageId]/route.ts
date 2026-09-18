@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { deleteObject } from '@/lib/r2'
+import { revalidateTag } from 'next/cache'
 
 export async function DELETE(
   _request: Request,
@@ -36,6 +37,7 @@ export async function DELETE(
         id: imageId,
       },
     })
+    revalidateTag('products', { expire: 0 })
     return NextResponse.json(
       { message: 'Imagem excluída com sucesso' },
       { status: 200 },

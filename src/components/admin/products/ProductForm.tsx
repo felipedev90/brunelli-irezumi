@@ -7,22 +7,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { CurrencyInput } from '@/components/ui/CurrencyInput'
 import { compressImage } from '@/lib/compress-image'
-
-const CATEGORY_LABELS: Record<string, string> = {
-  DRAWING: 'Desenho',
-  PRINT: 'Print',
-  TENUGUI: 'Tenugui',
-  SOCKS: 'Meia',
-  ECOBAG: 'Ecobag',
-  CUSTOM: 'Personalização',
-}
-
-const TAG_LABELS: Record<string, string> = {
-  MADE_TO_ORDER: 'Sob encomenda',
-  LIMITED: 'Edição limitada',
-  SOLD_OUT: 'Esgotado',
-  ON_SALE: 'Promoção',
-}
+import { CATEGORY_LABELS, TAG_LABELS } from '@/data/product-labels'
 
 type ProductFormProps = {
   product?: {
@@ -63,6 +48,11 @@ export function ProductForm({ product }: ProductFormProps) {
 
   async function onSubmit(data: CreateProductData) {
     setServerError(null)
+
+    if (!product && files.length === 0) {
+      setServerError('É necessário adicionar pelo menos uma imagem')
+      return
+    }
 
     const url = product
       ? `/api/admin/products/${product.id}`

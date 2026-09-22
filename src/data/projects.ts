@@ -22,6 +22,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'O Artista', href: '/#sobre' },
   { label: 'Especialidades', href: '/#servicos' },
   { label: 'Portfólio', href: '/#galeria' },
+  { label: 'Shop', href: '/loja' },
 ]
 
 export const HERO_IMG_CONTENT = {

@@ -14,12 +14,12 @@ export default async function LojaPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="relative mb-16 aspect-16/6 overflow-hidden">
             <Image
-              src="/images/hero/hero1900p.webp"
+              src="/images/services/shop1000p.webp"
               alt="Loja Brunelli Irezumi"
               fill
               quality={90}
               priority
-              className="object-cover opacity-50"
+              className="object-cover object-[center_100%] opacity-50"
               sizes="100vw"
             />
             <div className="from-surface absolute inset-0 bg-linear-to-t via-transparent to-transparent" />

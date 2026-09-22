@@ -38,7 +38,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
 
   return (
     <div>
-      <div className="mb-8 flex flex-col items-center gap-4">
+      <div className="mb-8 flex flex-col items-end gap-4">
         <button
           onClick={() => setIsFilterOpen((prev) => !prev)}
           className="text-on-surface hover:text-accent flex items-center gap-2 text-sm tracking-widest uppercase transition-colors"

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { formatCentsToBRL } from '@/lib/format-currency'
 import { DeleteProductButton } from '@/components/admin/products/DeleteProductButton'
 import { Pencil } from 'lucide-react'
+import { CATEGORY_LABELS, TAG_LABELS } from '@/data/product-labels'
 
 export const metadata: Metadata = {
   title: 'Produtos',
@@ -37,21 +38,43 @@ export default async function ProductsPage() {
           Nenhum produto cadastrado.
         </p>
       ) : (
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
             <div
               key={product.id}
               className="border-outline-variant bg-surface-container text-on-surface place-items-center rounded-sm border p-4"
             >
-              {product.images[0] && (
-                <Image
-                  src={product.images[0].url}
-                  alt={product.title}
-                  width={200}
-                  height={200}
-                  className="h-24 w-24 object-cover"
-                />
+              {product.images.length > 0 && (
+                <div className="grid w-full grid-cols-4 gap-2 p-2">
+                  {product.images.map((img, index) => (
+                    <div
+                      key={index}
+                      className="relative aspect-square overflow-hidden"
+                    >
+                      <Image
+                        src={img.url}
+                        alt={product.title}
+                        fill
+                        className="object-cover"
+                        sizes="100px"
+                      />
+                    </div>
+                  ))}
+                </div>
               )}
+              <div className="mt-2 flex flex-wrap justify-center gap-2">
+                <span className="text-on-surface-variant border-accent/30 rounded-full border px-3 py-1 text-xs">
+                  {CATEGORY_LABELS[product.category]}
+                </span>
+                {product.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-on-surface bg-surface-container-high rounded-full px-3 py-1 text-xs"
+                  >
+                    {TAG_LABELS[tag]}
+                  </span>
+                ))}
+              </div>
               <h2 className="text-on-surface mt-2 mb-3 text-xl font-semibold tracking-wider">
                 {product.title}
               </h2>

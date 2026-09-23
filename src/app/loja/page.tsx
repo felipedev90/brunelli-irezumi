@@ -11,7 +11,7 @@ export default async function LojaPage() {
     <>
       <Header />
       <main className="bg-surface min-h-dvh pt-24 pb-24">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl">
           <div className="relative mb-16 aspect-16/6 overflow-hidden">
             <Image
               src="/images/services/shop1000p.webp"

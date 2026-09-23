@@ -59,7 +59,7 @@ export default async function ServicePage({ params }: Props) {
     <>
       <Header />
       <main className="bg-surface min-h-dvh pt-24 pb-24">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl">
           {/* Hero do serviço */}
           <div className="relative mb-16 aspect-16/6 overflow-hidden">
             <Image
@@ -83,7 +83,7 @@ export default async function ServicePage({ params }: Props) {
           <GalleryGrid images={images} />
 
           {/* CTA */}
-          <div className="border-outline-variant/20 mt-16 flex flex-col justify-between gap-6 border-t pt-12 sm:flex-row md:items-center">
+          <div className="border-outline-variant/20 mt-16 flex flex-col justify-between gap-6 border-t px-6 pt-12 sm:flex-row md:items-center">
             <Link
               href="/#servicos"
               className="font-headline hover:text-secondary text-accent text-sm tracking-widest uppercase transition-colors"

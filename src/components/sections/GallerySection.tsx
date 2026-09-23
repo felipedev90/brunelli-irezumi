@@ -1,6 +1,7 @@
 import { GalleryGrid } from '@/components/ui/GalleryGrid'
 import Link from 'next/link'
-import { GALLERY_IMAGES, INSTAGRAM_URL } from '@/data/projects'
+import { INSTAGRAM_URL } from '@/data/projects'
+import type { GalleryImage } from '@/types'
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg
@@ -19,7 +20,11 @@ const InstagramIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-export function GallerySection() {
+type GallerySectionProps = {
+  images: GalleryImage[]
+}
+
+export function GallerySection({ images }: GallerySectionProps) {
   return (
     <section className="bg-surface py-12 md:py-24" id="galeria">
       <div className="mx-auto max-w-7xl px-6">
@@ -35,7 +40,7 @@ export function GallerySection() {
           </div>
         </div>
 
-        <GalleryGrid images={GALLERY_IMAGES} />
+        <GalleryGrid images={images} />
 
         <div className="mt-12 flex items-center justify-center text-center">
           <Link

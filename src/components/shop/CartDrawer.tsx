@@ -1,0 +1,144 @@
+'use client'
+
+import { useEffect } from 'react'
+import Image from 'next/image'
+import { X, Trash2 } from 'lucide-react'
+import { useCart } from '@/hooks/useCart'
+import { formatCentsToBRL } from '@/lib/format-currency'
+import { WHATSAPP_URL } from '@/data/projects'
+
+export function CartDrawer() {
+  const {
+    items,
+    isDrawerOpen,
+    toggleDrawer,
+    removeItem,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useCart()
+
+  useEffect(() => {
+    document.body.style.overflow = isDrawerOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isDrawerOpen])
+
+  const total = items.reduce(
+    (sum, item) =>
+      sum + (item.promoPriceCents ?? item.priceCents) * item.quantity,
+    0,
+  )
+
+  return (
+    <>
+      {isDrawerOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/70 blur-3xl"
+          onClick={toggleDrawer}
+        />
+      )}
+
+      <div
+        className={`bg-surface fixed top-0 right-0 z-50 h-full w-full transition-transform duration-300 lg:w-96 ${
+          isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="border-outline-variant flex items-center justify-between border-b p-4">
+          <h2 className="font-headline text-accent justify-center text-lg font-semibold tracking-widest uppercase">
+            Carrinho
+          </h2>
+          <button onClick={toggleDrawer} aria-label="Fechar carrinho">
+            <X className="text-outline" size={22} />
+          </button>
+        </div>
+
+        {items.length === 0 ? (
+          <p className="text-on-surface-variant p-4 text-sm">
+            Seu carrinho está vazio.
+          </p>
+        ) : (
+          <div className="flex flex-col gap-3 p-4">
+            {items.map((item) => (
+              <div
+                key={item.productId}
+                className="border-outline-variant flex items-center gap-3 border-b pb-3"
+              >
+                {item.imageUrl && (
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden">
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="64px"
+                    />
+                  </div>
+                )}
+                <div className="flex-1">
+                  <p className="text-on-surface text-sm font-medium">
+                    {item.title}
+                  </p>
+                  <p className="text-accent text-sm font-bold">
+                    {formatCentsToBRL(
+                      (item.promoPriceCents ?? item.priceCents) * item.quantity,
+                    )}
+                  </p>
+                </div>
+                <div className="border-outline-variant flex gap-6 rounded-full border px-3 py-1.5">
+                  <button
+                    disabled={item.quantity === 1}
+                    onClick={() => decreaseQuantity(item.productId)}
+                    aria-label={`Diminuir quantidade de ${item.title}`}
+                    className="text-on-surface"
+                  >
+                    -
+                  </button>
+                  {item.quantity}
+                  <button
+                    onClick={() => increaseQuantity(item.productId)}
+                    aria-label={`Aumentar quantidade de ${item.title}`}
+                    className="text-on-surface"
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  onClick={() => removeItem(item.productId)}
+                  aria-label={`Remover ${item.title} do carrinho`}
+                  className="text-secondary-container hover:text-on-secondary"
+                >
+                  <Trash2 size={18} />
+                </button>
+              </div>
+            ))}
+            <div className="flex items-center justify-between pt-3">
+              <span className="text-on-surface font-medium">Total</span>
+              <span className="text-accent font-bold">
+                {formatCentsToBRL(total)}
+              </span>
+            </div>
+            <button
+              onClick={() => {
+                const lines = items.map(
+                  (item) =>
+                    `- ${item.title} (${item.quantity}x) - ${formatCentsToBRL(
+                      (item.promoPriceCents ?? item.priceCents) * item.quantity,
+                    )}`,
+                )
+                const message = `Olá Felipe, gostaria de fazer o seguinte pedido:\n\n${lines.join('\n')}\n\nTotal: ${formatCentsToBRL(total)}`
+                window.open(
+                  `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`,
+                  '_blank',
+                )
+              }}
+              className="bg-accent text-on-accent hover:bg-accent-hover mt-4 w-full rounded-full py-3 text-sm font-bold transition-colors"
+            >
+              Finalizar pedido no WhatsApp
+            </button>
+          </div>
+        )}
+      </div>
+    </>
+  )
+}

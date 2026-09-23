@@ -8,7 +8,7 @@ export function LocationSection() {
       className="border-outline-variant from-bg-surface to-surface-container-high border-t bg-linear-to-b py-12 md:py-24"
       id="localizacao"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-3 lg:px-6">
         <div className="bg-outline-variant/10 grid gap-px md:grid-cols-2">
           {/* Info */}
           <div className="bg-surface-container-low flex flex-col items-center p-12">

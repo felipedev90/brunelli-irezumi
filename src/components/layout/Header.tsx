@@ -6,6 +6,8 @@ import { NAV_LINKS, WHATSAPP_URL } from '@/data/projects'
 import { MobileNav } from './MobileNav'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { Menu, X } from 'lucide-react'
+import { CartIcon } from '@/components/shop/CartIcon'
+import { CartDrawer } from '@/components/shop/CartDrawer'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -25,10 +27,10 @@ export function Header() {
 
   return (
     <>
-      <header className="bg-surface/80 fixed top-0 z-50 flex w-full items-center justify-between px-6 py-4 backdrop-blur-xl">
+      <header className="bg-surface/80 fixed top-0 z-50 flex w-full items-center justify-between px-3 py-2 backdrop-blur-xl lg:px-6 lg:py-4">
         <Link
           href="/#hero"
-          className="text-on-surface font-headline text-xl font-black tracking-widest uppercase"
+          className="text-on-surface font-headline mt-2 text-xl font-black tracking-widest uppercase lg:mt-0"
         >
           <span className="text-accent">Brunelli </span>Irezumi
         </Link>
@@ -47,6 +49,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <CartIcon />
           <Link
             href={WHATSAPP_URL}
             target="_blank"
@@ -59,17 +62,21 @@ export function Header() {
         </nav>
 
         {/* Mobile menu button */}
-        <button
-          className="text-accent lg:hidden"
-          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-4 lg:hidden">
+          <CartIcon />
+          <button
+            className="text-accent"
+            aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </header>
+      <CartDrawer />
 
       <div className={`${isOpen ? 'hidden' : 'block'} lg:block`}>
         <WhatsAppButton />

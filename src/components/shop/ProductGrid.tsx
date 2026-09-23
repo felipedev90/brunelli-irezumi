@@ -36,7 +36,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
     })) ?? []
 
   return (
-    <div>
+    <div className="px-6">
       <CategoryFilter
         selectedCategory={selectedCategory}
         onSelectCategory={setSelectedCategory}

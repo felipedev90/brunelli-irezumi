@@ -27,10 +27,10 @@ type GallerySectionProps = {
 export function GallerySection({ images }: GallerySectionProps) {
   return (
     <section className="bg-surface py-12 md:py-24" id="galeria">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div className="bg-outline-variant/20 mx-8 hidden h-0.5 flex-1 lg:block" />
-          <div>
+          <div className="px-3 lg:px-6">
             <span className="font-headline text-accent text-sm font-bold tracking-[0.3em] uppercase">
               By Felipe Brunelli
             </span>

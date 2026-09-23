@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import { formatCentsToBRL } from '@/lib/format-currency'
 import { CATEGORY_LABELS, TAG_LABELS } from '@/data/product-labels'
+import { WHATSAPP_URL } from '@/data/projects'
+import { useCart } from '@/hooks/useCart'
 
 type Product = {
   id: string
@@ -21,6 +23,7 @@ type ProductCardProps = {
 }
 
 export function ProductCard({ product, onOpenImage }: ProductCardProps) {
+  const { addItem } = useCart()
   const coverImage = product.images[0]
   const firstTag = product.tags[0]
 
@@ -102,8 +105,29 @@ export function ProductCard({ product, onOpenImage }: ProductCardProps) {
             {formatCentsToBRL(product.priceCents)}
           </p>
         )}
-        <button className="bg-accent text-on-accent hover:bg-accent-hover mb-2 rounded-full px-4 py-2 text-sm font-bold transition-colors">
-          Adicionar ao carrinho
+        <button
+          className="bg-accent text-on-accent hover:bg-accent-hover mb-2 cursor-pointer rounded-full px-4 py-2 text-sm font-bold transition-colors"
+          onClick={() => {
+            if (product.tags.includes('MADE_TO_ORDER')) {
+              window.open(
+                `${WHATSAPP_URL}?text=Olá%20Felipe,%20gostaria%20de%20mais%20informações%20sobre%20o%20produto%20${product.title}, como%20posso%20encomendar?`,
+                '_blank',
+              )
+            } else {
+              addItem({
+                productId: product.id,
+                title: product.title,
+                priceCents: product.priceCents,
+                promoPriceCents: product.promoPriceCents,
+                quantity: 1,
+                imageUrl: coverImage?.url ?? null,
+              })
+            }
+          }}
+        >
+          {product.tags.includes('MADE_TO_ORDER')
+            ? 'Consultar pelo WhatsApp'
+            : 'Adicionar ao carrinho'}
         </button>
       </div>
     </div>

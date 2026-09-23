@@ -120,6 +120,7 @@ export function ProductCard({ product, onOpenImage }: ProductCardProps) {
                 priceCents: product.priceCents,
                 promoPriceCents: product.promoPriceCents,
                 quantity: 1,
+                imageUrl: coverImage?.url ?? null,
               })
             }
           }}

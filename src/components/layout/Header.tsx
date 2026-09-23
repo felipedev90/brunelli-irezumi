@@ -7,6 +7,7 @@ import { MobileNav } from './MobileNav'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { Menu, X } from 'lucide-react'
 import { CartIcon } from '@/components/shop/CartIcon'
+import { CartDrawer } from '@/components/shop/CartDrawer'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -75,6 +76,7 @@ export function Header() {
           </button>
         </div>
       </header>
+      <CartDrawer />
 
       <div className={`${isOpen ? 'hidden' : 'block'} lg:block`}>
         <WhatsAppButton />
